@@ -123,7 +123,7 @@ yarn run build
 
 ## Contribution Workflow
 
-Thanks for your interest in contributing to YOUR_PROJECT_URL_HERE! ❤️
+Thanks for your interest in contributing to BoolBots! ❤️
 
 Here's a quick guide on how to get started.
 
@@ -132,7 +132,7 @@ Here's a quick guide on how to get started.
 3. Beep boop away!
 4. **Before you push**, make sure your app runs with `yarn start`. If there are any errors, our CI/CD service will **reject your build**.
 5. Once you're ready, stage and commit your changes!
-6. Make a [pull request](https://github.com/uclaacm/YOUR_PROJECT_URL_HERE/pulls) with your changes, and let someone on your project team know.
+6. Make a [pull request](https://github.com/uclaacm/boolbots/pulls) with your changes, and let someone on your project team know.
    a. Netlify has a neat feature called "Deploy Previews" that give you a link to preview your changes; [see the blog post](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) for more info!
 7. If your code passes code review, then we can merge it into `main`. Congratulations! If you'd like, it's now safe to delete your branch/fork.
 
