@@ -89,8 +89,8 @@ We'll use a really common Node.js project workflow + Yarn!
 First, let's clone our repository, and install all of our yarn dependencies:
 
 ```
-git clone https://github.com/uclaacm/YOUR_PROJECT_URL_HERE.git
-cd YOUR_PROJECT_URL_HERE
+git clone https://github.com/uclaacm/https://github.com/uclaacm/boolbots.git
+cd boolbots
 ```
 
 If you don't have yarn installed...
