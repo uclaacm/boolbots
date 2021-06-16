@@ -13,9 +13,9 @@ function NextButton(): JSX.Element {
     nextPage = pages[pages.indexOf(current)+1];
   }
   if (end) {
-    return (null as any);
+    return (<div></div>);
   } else {
-    return (<Link to={nextPage}  id="nextButton">next</Link>);
+    return (<Link to={nextPage}  id='nextButton'>next</Link>);
   }
 }
 
