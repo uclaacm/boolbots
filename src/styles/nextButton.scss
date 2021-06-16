@@ -1,13 +1,14 @@
 @import 'global';
-#nextButton  {
-    background-color: $main-orange;
-    color: black;
-    border-radius: 20px;
-    text-decoration: none;
-    padding: 5px 20px;
-    font-size: 22px;
-    font-family: $main-font;
-    margin-right: 30px;
-    margin-bottom: auto;
-    margin-top: calc(100vh - 70px);
+
+#nextButton {
+  background-color: $main-orange;
+  border-radius: 20px;
+  color: black;
+  font-family: $main-font;
+  font-size: 22px;
+  padding: 5px 20px;
+  text-decoration: none;
+  margin-bottom: auto;
+  margin-right: 30px;
+  margin-top: calc(100vh - 70px);
 }
