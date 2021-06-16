@@ -1,5 +1,5 @@
 import './assets/WestwoodSans-Regular.ttf';
-import './styles/app.scss'; 
+import './styles/app.scss';
 
 import {
   BrowserRouter as Router,
@@ -8,8 +8,8 @@ import {
 } from 'react-router-dom';
 //Remember to import tsx files for pages!
 //Import components that are inside pages in page tsx files themselves
-import Sidebar from './components/sidebar';
 import NextButton from './components/nextButton';
+import Sidebar from './components/sidebar';
 import Landing from './pages/landing';
 import Variable from './pages/variable';
 
