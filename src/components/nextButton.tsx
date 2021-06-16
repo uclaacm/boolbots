@@ -15,7 +15,7 @@ function NextButton(): JSX.Element {
   if (end) {
     return (<div></div>);
   } else {
-    return (<Link to={nextPage}  id="nextButton">next</Link>);
+    return (<Link to={nextPage}  id='nextButton'>next</Link>);
   }
 }
 

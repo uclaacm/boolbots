@@ -1,8 +1,10 @@
+
 import '../styles/sidebar.scss';
+
 function Sidebar(): JSX.Element {
   return (
     <div id="sidebar">
-        test
+      test
     </div>
   );
 }
