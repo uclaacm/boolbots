@@ -5,7 +5,16 @@
 }
 
 body {
-  font-family: 'Westwood Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
   margin: 0;
-  text-align: center;
 }
+
+// Variables
+$main-background: #FFFFFF;
+$main-orange: #FF8A00;
+$code-background: #322727;
+$main-blue: #00B8D9;
+$main-font: 'Darker Grotesque', sans-serif;
+$code-font: 'Roboto Mono', monospace;
+$code-font-size: 18px;
+$output-font-size: 20px;
+$sidebar-font-size: 18px;
