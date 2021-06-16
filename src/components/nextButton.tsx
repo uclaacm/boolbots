@@ -10,12 +10,12 @@ function NextButton(): JSX.Element {
   if (current === '/experiment') {
     end = true;
   } else {
-      nextPage = pages[pages.indexOf(current)+1];
+    nextPage = pages[pages.indexOf(current)+1];
   }
   if (end) {
-    return (null as any);
+    return (<div></div>);
   } else {
-    return (<Link to={nextPage}  id='nextButton'>next</Link>)
+    return (<Link to={nextPage}  id='nextButton'>next</Link>);
   }
 }
 
