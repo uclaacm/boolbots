@@ -11,21 +11,21 @@ import {
 import NextButton from './components/nextButton';
 import Sidebar from './components/sidebar';
 import Landing from './pages/landing';
+import Python from './pages/python';
 import Variable from './pages/variable';
 
 function App(): JSX.Element {
   return (
     <Router>
-      <div id="app">
-        <Sidebar/>
-        <div id = "contents">
-          <Switch>
-            <Route exact path="/"> <Landing/> </Route>
-            <Route path="/variable"> <Variable/> </Route>
-          </Switch>
-        </div>
-        <NextButton/>
+      <Sidebar/>
+      <div id = "contents">
+        <Switch>
+          <Route exact path="/"> <Landing/> </Route>
+          <Route path="/variable"> <Variable/> </Route>
+          <Route path="/python"> <Python/> </Route>
+        </Switch>
       </div>
+      <NextButton/>
     </Router>
   );
 }

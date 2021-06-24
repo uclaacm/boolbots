@@ -1,0 +1,33 @@
+@import 'global';
+
+.drop {
+  background-color: white;
+  border-radius: 3px;
+  font-family: $main-font;
+  font-size: 20px;
+  line-height: 23px;
+  margin-bottom: 3px;
+  min-height: 27px;
+  padding-left: 10px;
+  width: 60px;
+}
+
+
+.arrow {
+  background: url('../assets/arrow.png') no-repeat right;
+  display: inline-block;
+  padding: 4px;
+}
+
+.Dropdown-arrow-wrapper {
+  padding-right: 7px;
+}
+
+.Dropdown-control {
+  display: flex;
+}
+
+.Dropdown-placeholder.is-selected { //Dropdown selected option
+  flex-grow: 1;
+}
+
