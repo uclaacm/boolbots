@@ -1,5 +1,4 @@
 @import 'global';
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap');
 
 .dropdown-container {
   align-items: center;
@@ -14,7 +13,7 @@
 .dropdown-root {
   display: flex;
   flex-direction: column-reverse;
-  font-family: 'Darker Grotesque', sans-serif;
+  font-family: $main-font;
   font-size: 24px;
   text-align: center;
   width: 100%;
