@@ -1,7 +1,7 @@
 
 import '../styles/sidebar.scss';
 import { useLocation } from 'react-router-dom';
-import logo from '../assets/Logo.svg';
+import logo from '../assets/logo.svg';
 
 function Sidebar(): JSX.Element {
   const pages = ['/','/variable','/equal','/comparison','/boolean','/advanced','/output','/python','/experiment'];

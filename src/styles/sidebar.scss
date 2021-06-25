@@ -3,34 +3,34 @@
 #sidebar {
   background-color: $main-orange;
   display: inline-block;
+  font-family: $main-font;
   height: 100vh;
   width: 275px;
-  font-family: $main-font;
 }
 
 #header {
-  width: inherit;
-  height: 10vh;
   display: flex;
   flex-direction: row;
+  height: 10vh;
+  width: inherit;
 }
 
 #title {
-  position: relative;
   color: white;
+  font-size: 2em;
   font-style: normal;
   font-weight: 500;
-  font-size: 2em;
   line-height: 33px;
   padding-left: 15px;
   padding-top: 15px;
+  position: relative;
 }
 
 #logo {
-  position: relative;
-  left: 5px;
-  top: 5px;
   height: 8vh;
+  left: 5px;
+  position: relative;
+  top: 5px;
   width: 8vw;
 }
 
