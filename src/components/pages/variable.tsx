@@ -1,4 +1,4 @@
-import '../styles/variable.scss';
+import '../../styles/variable.scss';
 function Variable(): JSX.Element {
   return (
     <div>

@@ -1,5 +1,5 @@
 
-import '../styles/sidebar.scss';
+import '../../styles/sidebar.scss';
 
 function Sidebar(): JSX.Element {
   return (

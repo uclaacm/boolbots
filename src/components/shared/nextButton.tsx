@@ -1,4 +1,4 @@
-import '../styles/nextButton.scss';
+import '../../styles/nextButton.scss';
 import {Link, useLocation} from 'react-router-dom';
 
 function NextButton(): JSX.Element {
