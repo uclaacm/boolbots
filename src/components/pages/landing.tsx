@@ -1,4 +1,4 @@
-import '../../styles/sidebar.scss';
+import '../../styles/landing.scss';
 function Landing(): JSX.Element {
   return (
     <div>
