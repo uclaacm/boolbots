@@ -1,6 +1,6 @@
 import '../../styles/python.scss';
-import BooleanDropdown from '../shared/booleanDropdown';
-import {Color, lineOfCode}  from  '../shared/typings';
+import {BooleanDropdown, Position} from '../shared/booleanDropdown';
+import {Color, lineOfCode, CodeFormat}  from  '../shared/typings';
 
 function Python(): JSX.Element {
 
@@ -53,25 +53,14 @@ function Python(): JSX.Element {
       <h1>Match the output to the code:</h1>
       <div id='problem'>
         <div id='code'>
-          <div>
-            {code.map((lineOfCode1) => (
-              <div key={code.indexOf(lineOfCode1)}>
-                {lineOfCode1.map((bitOfCode) =>
-                  Object.entries(bitOfCode).map(([text, color]) => {
-                    return <span className={color} key={text}>{text}</span>;
-                  }),
-                )}
-                <br/>
-              </div>
-            ))}
-          </div>
+          <CodeFormat text={code}/>
         </div>
         <div id='output'>
-          <div>
+          <div id='dropdowns'>
             {/* TODO: replace change with actual functionality */}
-            <BooleanDropdown change={() => void 0}/>
-            <BooleanDropdown change={() => void 0}/>
-            <BooleanDropdown change={() => void 0}/>
+            <BooleanDropdown change={() => void 0} position={Position.Top}/>
+            <BooleanDropdown change={() => void 0} position={Position.Middle}/>
+            <BooleanDropdown change={() => void 0} position={Position.Bottom}/>
           </div>
         </div>
       </div>

@@ -9,9 +9,28 @@
   margin-bottom: 3px;
   min-height: 27px;
   padding-left: 10px;
+  position: absolute;
   width: 60px;
 }
 
+.top {
+  top: 0;
+  z-index: 3;
+}
+
+.middle {
+  top: 30px;
+  z-index: 2;
+}
+
+.bottom {
+  top: 60px;
+  z-index: 1;
+}
+
+.is-open {
+  background-color: lightgray;
+}
 
 .arrow {
   background: url('../assets/arrow.png') no-repeat right;
