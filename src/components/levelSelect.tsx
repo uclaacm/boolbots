@@ -8,8 +8,7 @@ function LevelSelect(): JSX.Element {
 
   const pages = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-  const [currentPage, setCurrentPage] = useState(6 /* change this to current page once set up */);
-
+  const [currentPage, setCurrentPage] = useState(6); // change this to current page once set up
 
   const createDropDownItems = ():Option[] => {
     return pages.map((item) => {
