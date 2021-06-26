@@ -10,10 +10,10 @@ export enum Position {
 }
 
 interface BooleanDropdownProps {
-  change: () => void;
+  onChange: () => void;
   position: Position;
 }
 
 export function BooleanDropdown(props:BooleanDropdownProps):JSX.Element  {
-  return <Dropdown className={'drop '+props.position} options={options} value='False' arrowClassName='arrow' onChange={props.change}/>;
+  return <Dropdown className={'drop '+props.position} options={options} value='False' arrowClassName='arrow' onChange={props.onChange}/>;
 }

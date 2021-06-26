@@ -3,6 +3,7 @@
 .drop {
   background-color: white;
   border-radius: 3px;
+  cursor: pointer;
   font-family: $main-font;
   font-size: 20px;
   line-height: 23px;
@@ -33,7 +34,7 @@
 }
 
 .arrow {
-  background: url('../assets/arrow.png') no-repeat right;
+  background: url('../assets/arrow.svg') no-repeat right;
   display: inline-block;
   padding: 4px;
 }
