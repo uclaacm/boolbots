@@ -6,8 +6,10 @@
   border-radius: 2em;
   display: inline-flex;
   margin: 2em 1em;
-  position: relative;
-  width: 100%;
+  position: absolute;
+  width: 250px;
+  left: 0px;
+  bottom: 0px;
 }
 
 .dropdown-root {

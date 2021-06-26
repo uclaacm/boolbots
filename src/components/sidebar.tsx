@@ -20,7 +20,6 @@ function Sidebar(): JSX.Element {
   const current = location.pathname;
   return (
     <div id="sidebar">
-      <LevelSelect/>
       <div id='header'>
         <div id='title'>
           BoolBots
@@ -30,6 +29,7 @@ function Sidebar(): JSX.Element {
       <div id='desc'>
         {desc[pages.indexOf(current)]}
       </div>
+      <LevelSelect/>
     </div>
   );
 }
