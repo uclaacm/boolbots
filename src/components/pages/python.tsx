@@ -1,14 +1,52 @@
 import '../../styles/python.scss';
 import BooleanDropdown from '../shared/booleanDropdown';
+import {Color, lineOfCode}  from  '../shared/typings';
 
 function Python(): JSX.Element {
 
-  const outputAndMatches = {
-    num_of_antennas: '2',
-    has_arms: 'True',
-    has_ears: 'False',
-    color: '"white"',
-  };
+  const code: lineOfCode[] = [
+    [
+      { ['num_of_antennas']: Color.White },
+      { [' = ']: Color.Orange },
+      { ['2']: Color.Blue },
+    ],
+    [
+      { ['has_arms']: Color.White },
+      { [' = ']: Color.Orange },
+      { ['True']: Color.Blue },
+    ],
+    [
+      { ['has_ears']: Color.White },
+      { [' = ']: Color.Orange },
+      { ['False']: Color.Blue },
+    ],
+    [
+      { ['color']: Color.White },
+      { [' = ']: Color.Orange },
+      { ['"white"']: Color.Blue },
+    ],
+    [],
+    [
+      { ['print']: Color.Orange },
+      { ['(num_of_antennas']: Color.White },
+      { [' > ']: Color.Orange },
+      { ['3']: Color.Blue },
+      { [' or ']: Color.Orange },
+      { ['has_arms)']: Color.White },
+    ],
+    [
+      { ['print']: Color.Orange },
+      { ['(']: Color.White },
+      { ['not']: Color.Orange },
+      { [' has_ears)']: Color.White },
+    ],
+    [
+      { ['print']: Color.Orange },
+      { ['(color']: Color.White },
+      { [' != ']: Color.Orange },
+      { ['"red")']: Color.White},
+    ],
+  ];
 
   return (
     <div id='python'>
@@ -16,17 +54,16 @@ function Python(): JSX.Element {
       <div id='problem'>
         <div id='code'>
           <div>
-            {Object.entries(outputAndMatches).map(([output, match]) => (
-              <div key={output}>
-                <span className='white'>{output}</span>
-                <span className='orange'> = </span>
-                <span className='blue'>{match}</span>
+            {code.map((lineOfCode1) => (
+              <div key={code.indexOf(lineOfCode1)}>
+                {lineOfCode1.map((bitOfCode) =>
+                  Object.entries(bitOfCode).map(([text, color]) => {
+                    return <span className={color} key={text}>{text}</span>;
+                  }),
+                )}
+                <br/>
               </div>
             ))}
-            <br/>
-            <span className='orange'>print</span><span className='white'>(num_of_antennas </span><span className='orange'>&gt; </span><span className='blue'>3 </span><span className='orange'>or </span><span className='white'>has_arms)</span><br/>
-            <span className='orange'>print</span><span className='white'>(</span><span className='orange'>not </span><span className='white'>has_ears)</span><br/>
-            <span className='orange'>print</span><span className='white'>(color </span><span className='orange'>!= </span><span className='blue'>&quot;red&quot;</span><span className='white'>)</span><br/>
           </div>
         </div>
         <div id='output'>
