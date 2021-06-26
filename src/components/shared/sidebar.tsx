@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
-import logo from '../assets/logo.svg';
-import LevelSelect from '../../levelSelect';
+import logo from '../../assets/logo.svg';
+import LevelSelect from './levelSelect';
 import '../../styles/sidebar.scss';
 
 function Sidebar(): JSX.Element {
