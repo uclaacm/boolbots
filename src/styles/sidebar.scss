@@ -3,19 +3,19 @@
 #sidebar {
   background-color: $main-orange;
   display: inline-block;
+  flex-direction: column;
   font-family: $main-font;
   height: 100vh;
-  width: 275px;
-  flex-direction: column;
   padding-left: 10px;
+  width: 275px;
 }
 
 #header {
   display: flex;
   flex-direction: row;
   height: 10vh;
-  width: inherit;
   padding-top: 20px;
+  width: inherit;
 }
 
 #title {
