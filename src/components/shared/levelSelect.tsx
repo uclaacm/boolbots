@@ -1,4 +1,4 @@
-import '../styles/levelSelect.scss';
+import '../../styles/levelSelect.scss';
 import {useState} from 'react';
 import Dropdown, { Option } from 'react-dropdown';
 import { BsArrowUpShort, BsArrowDownShort } from 'react-icons/bs';

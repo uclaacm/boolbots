@@ -8,24 +8,24 @@ import {
 } from 'react-router-dom';
 //Remember to import tsx files for pages!
 //Import components that are inside pages in page tsx files themselves
-import NextButton from './components/nextButton';
-import Sidebar from './components/sidebar';
-import Landing from './pages/landing';
-import Variable from './pages/variable';
+import Landing from './components/pages/landing';
+import Python from './components/pages/python';
+import Variable from './components/pages/variable';
+import NextButton from './components/shared/nextButton';
+import Sidebar from './components/shared/sidebar';
 
 function App(): JSX.Element {
   return (
     <Router>
-      <div id="app">
-        <Sidebar/>
-        <div id = "contents">
-          <Switch>
-            <Route exact path="/"> <Landing/> </Route>
-            <Route path="/variable"> <Variable/> </Route>
-          </Switch>
-        </div>
-        <NextButton/>
+      <Sidebar/>
+      <div id = "contents">
+        <Switch>
+          <Route exact path="/"> <Landing/> </Route>
+          <Route path="/variable"> <Variable/> </Route>
+          <Route path="/python"> <Python/> </Route>
+        </Switch>
       </div>
+      <NextButton/>
     </Router>
   );
 }
