@@ -72,12 +72,9 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
     }
   };
 
-  const leftArrow = <IoMdArrowDropleftCircle onClick={leftArrowOnClick} className="left-arrow" size={20} />;
-  const rightArrow = <IoMdArrowDroprightCircle onClick={rightArrowOnClick} className="right-arrow" size={20} />;
-
   return (
     <div className="dropdown-container">
-      {leftArrow}
+      <IoMdArrowDropleftCircle onClick={leftArrowOnClick} className="left-arrow" size={20} />
       <Dropdown
         options={pageArray}
         baseClassName="dropdown"
@@ -86,7 +83,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
         arrowClosed={<BsArrowUpShort/>}
         arrowOpen={<BsArrowDownShort/>}
       />
-      {rightArrow}
+      <IoMdArrowDroprightCircle onClick={rightArrowOnClick} className="right-arrow" size={20} />
     </div>
   );
 
