@@ -3,13 +3,13 @@ import {useState, useEffect} from 'react';
 import Dropdown, { Option } from 'react-dropdown';
 import { BsArrowUpShort, BsArrowDownShort } from 'react-icons/bs';
 import {
+  IoMdArrowDroprightCircle,
+  IoMdArrowDropleftCircle,
+} from 'react-icons/io';
+import {
   useHistory,
 } from 'react-router-dom';
-/*import {
-  IoMdArrowDroprightCircle,
-  IoMdArrowDropleftCircle
-} from 'react-icons/io'
-*/
+
 interface LevelSelectProps {
   pages: string[];
   locationPathName: string;
@@ -55,11 +55,29 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
     updateCurrentDisplay(pages.indexOf(locationPathName));
   }, [locationPathName]);
 
-  //const leftArrow = (<IoMdArrowDropleftCircle/>);
-  //const rightArrow = (<IoMdArrowDroprightCircle/>);
+
+  const leftArrowOnClick = () => {
+    const pageIndex = pages.indexOf(locationPathName);
+    if (pageIndex > 0) {
+      const newPage = pages[pageIndex - 1];
+      history.push(newPage);
+    }
+  };
+
+  const rightArrowOnClick = () => {
+    const pageIndex = pages.indexOf(locationPathName);
+    if (pageIndex < 8) {
+      const newPage = pages[pageIndex + 1];
+      history.push(newPage);
+    }
+  };
+
+  const leftArrow = <IoMdArrowDropleftCircle onClick={leftArrowOnClick} className="left-arrow" size={20} />;
+  const rightArrow = <IoMdArrowDroprightCircle onClick={rightArrowOnClick} className="right-arrow" size={20} />;
 
   return (
     <div className="dropdown-container">
+      {leftArrow}
       <Dropdown
         options={pageArray}
         baseClassName="dropdown"
@@ -68,6 +86,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
         arrowClosed={<BsArrowUpShort/>}
         arrowOpen={<BsArrowDownShort/>}
       />
+      {rightArrow}
     </div>
   );
 

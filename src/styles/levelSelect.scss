@@ -64,3 +64,28 @@
   justify-self: left;
   padding-bottom: 2.5px;
 }
+
+.left-arrow {
+  align-items: center;
+  bottom: 6px;
+  display: flex;
+  left: 8px;
+  margin-right: -1.5em;
+  position: absolute;
+  z-index: 1;
+}
+
+.right-arrow {
+  align-items: center;
+  bottom: 6px;
+  display: flex;
+  margin-left: -1.5em;
+  position: absolute;
+  right: 8px;
+  z-index: 1;
+}
+
+.right-arrow:hover,
+.leftarrow:hover {
+  color: #808080;
+}
