@@ -5,7 +5,11 @@ import { BsArrowUpShort, BsArrowDownShort } from 'react-icons/bs';
 import {
   useHistory,
 } from 'react-router-dom';
-
+/*import {
+  IoMdArrowDroprightCircle,
+  IoMdArrowDropleftCircle
+} from 'react-icons/io'
+*/
 interface LevelSelectProps {
   pages: string[];
   locationPathName: string;
@@ -33,16 +37,26 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
     setCurrentDisplay(optionCopy);
   };
 
-  const history = useHistory(); // ReactRouter history element, used to change the route by pagechange function
+  const history = useHistory();
 
+  let lastPage = locationPathName;
   const onPageChange = (currentOption:Option):void => {
-    history.push((currentOption.value));
+    // if the same option was selected, still update the display but don't route anywhere
+    if (lastPage == currentOption.value) {
+      updateCurrentDisplay(pages.indexOf(lastPage));
+    } else {
+      lastPage = currentOption.value;
+      history.push(currentOption.value);
+    }
   };
 
-  // double use case, causes levelselect to change when location is changed via level select and via next button
+  // need this so that the levelSelect refreshes its display when location changes via next button as well
   useEffect(() => {
     updateCurrentDisplay(pages.indexOf(locationPathName));
   }, [locationPathName]);
+
+  //const leftArrow = (<IoMdArrowDropleftCircle/>);
+  //const rightArrow = (<IoMdArrowDroprightCircle/>);
 
   return (
     <div className="dropdown-container">
@@ -50,12 +64,11 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
         options={pageArray}
         baseClassName="dropdown"
         onChange={onPageChange}
-        value={currentDisplay} // the page the dropdown starts off displaying
+        value={currentDisplay}
         arrowClosed={<BsArrowUpShort/>}
         arrowOpen={<BsArrowDownShort/>}
       />
     </div>
-
   );
 
 }
