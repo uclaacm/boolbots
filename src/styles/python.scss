@@ -1,18 +1,5 @@
 @import 'global';
 
-#code {
-  align-items: center;
-  background-color: $code-background;
-  border-radius: $rectangle-corner-radius;
-  display: flex;
-  font-family: $code-font;
-  font-size: $code-font-size;
-  height: 350px;
-  margin-right: 20px;
-  padding-left: 30px;
-  width: 450px;
-}
-
 .white {
   color: white;
 }
@@ -25,16 +12,6 @@
   color: $main-blue;
 }
 
-#output {
-  align-items: center;
-  background-color: $main-orange;
-  border-radius: $rectangle-corner-radius;
-  display: flex;
-  height: 350px;
-  padding-left: 20px;
-  width: 180px;
-}
-
 #dropdowns {
   height: 90px;
   position: absolute;
@@ -42,19 +19,14 @@
 }
 
 #problem {
-  display: flex;
-  margin-top: 40px;
+  margin-top: 3vw;
 }
 
 #python {
-  margin: auto 0;
-}
-
-h1 {
-  font-family: $main-font;
-  font-size: $subtitle-font-size;
-  font-weight: bold;
-  line-height: $subtitle-line-height;
-  margin-top: 0;
+  display: grid;
+  grid-template-rows: 10% auto;
+  height: 80%;
+  width: 100%;
+  // justify-content: center;
 }
 

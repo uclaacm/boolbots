@@ -50,22 +50,25 @@ function Python(): JSX.Element {
   ];
 
   return (
-    <div id='python'>
-      <h1>Match the output to the code:</h1>
-      <div id='problem'>
-        <div id='code'>
-          <CodeFormat code={code}/>
-        </div>
-        <div id='output'>
-          <div id='dropdowns'>
-            {/* TODO: replace change with actual functionality */}
-            <BooleanDropdown onChange={() => void 0} position={Position.Top}/>
-            <BooleanDropdown onChange={() => void 0} position={Position.Middle}/>
-            <BooleanDropdown onChange={() => void 0} position={Position.Bottom}/>
+    <div className='frame'>
+      <div id='python'>
+        <h1>Match the output to the code:</h1>
+        <div id='problem' className='code-and-output'>
+          <div id='code'>
+            <CodeFormat code={code}/>
+          </div>
+          <div id='output'>
+            <div id='dropdowns'>
+              {/* TODO: replace change with actual functionality */}
+              <BooleanDropdown onChange={() => void 0} position={Position.Top}/>
+              <BooleanDropdown onChange={() => void 0} position={Position.Middle}/>
+              <BooleanDropdown onChange={() => void 0} position={Position.Bottom}/>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
   );
 }
 
