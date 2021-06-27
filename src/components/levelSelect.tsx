@@ -1,19 +1,23 @@
 import '../styles/levelSelect.scss';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Dropdown, { Option } from 'react-dropdown';
 import { BsArrowUpShort, BsArrowDownShort } from 'react-icons/bs';
+import {
+  useHistory,
+} from 'react-router-dom';
 
+interface LevelSelectProps {
+  pages: string[];
+  locationPathName: string;
+}
 
-function LevelSelect(): JSX.Element {
-
-  const pages = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
-  const [currentPage, setCurrentPage] = useState(6); // change this to current page once set up
+function LevelSelect(props:LevelSelectProps): JSX.Element {
+  const { pages, locationPathName } = props;
 
   const createDropDownItems = ():Option[] => {
-    return pages.map((item) => {
+    return pages.map((item, index) => {
       return  ({
-        label: <div>{item}</div>,
+        label: <div>{index + 1}</div>,
         value: item,
       });
     });
@@ -21,11 +25,24 @@ function LevelSelect(): JSX.Element {
 
   const pageArray = createDropDownItems();
 
-  const onPageChange = (currentOption:Option):void => {
-    // add functionality here to change the current page
-    // the selected option is passed in automatically
-    setCurrentPage(parseInt(currentOption.value));
+  const [currentDisplay, setCurrentDisplay] = useState<Option>();
+
+  const updateCurrentDisplay = (index:number) => {
+    const optionCopy = pageArray[index];
+    optionCopy.label = <div>Level {index + 1} of 9</div>;
+    setCurrentDisplay(optionCopy);
   };
+
+  const history = useHistory(); // ReactRouter history element, used to change the route by pagechange function
+
+  const onPageChange = (currentOption:Option):void => {
+    history.push((currentOption.value));
+  };
+
+  // double use case, causes levelselect to change when location is changed via level select and via next button
+  useEffect(() => {
+    updateCurrentDisplay(pages.indexOf(locationPathName));
+  }, [locationPathName]);
 
   return (
     <div className="dropdown-container">
@@ -33,7 +50,7 @@ function LevelSelect(): JSX.Element {
         options={pageArray}
         baseClassName="dropdown"
         onChange={onPageChange}
-        value={pageArray[currentPage - 1]} // the page the dropdown starts off displaying
+        value={currentDisplay} // the page the dropdown starts off displaying
         arrowClosed={<BsArrowUpShort/>}
         arrowOpen={<BsArrowDownShort/>}
       />
