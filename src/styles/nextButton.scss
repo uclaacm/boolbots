@@ -1,6 +1,6 @@
 @import 'global';
 
-#nextButton {
+.nextButton {
   background-color: $main-orange;
   border-radius: 20px;
   color: black;
@@ -16,4 +16,11 @@
   text-decoration: none;
   top: 0;
   width: 45px;
+  opacity: 50%;
+  cursor: default;
+}
+
+#enabled {
+  opacity: 100%;
+  cursor: pointer;
 }

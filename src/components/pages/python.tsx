@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import '../../styles/python.scss';
 import {BooleanDropdown, Position} from '../shared/booleanDropdown';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
-function Python(): JSX.Element {
+interface PythonProps {
+  enable: () => void;
+}
+
+function Python(props:PythonProps): JSX.Element {
 
   const code: lineOfCode[] = [
     [
@@ -45,9 +50,31 @@ function Python(): JSX.Element {
       { ['print']: Color.Orange },
       { ['(color']: Color.White },
       { [' != ']: Color.Orange },
-      { ['"red")']: Color.White},
+      { ['"red"']: Color.Blue},
+      { [')']: Color.White},
     ],
   ];
+
+  const [top, setTop] = useState(false);
+  const [middle, setMiddle] = useState(false);
+  const [bottom,setBottom] = useState(false);
+
+  const selected = (value:string, pos:Position) => {
+    const val = value === 'True';
+    switch (pos) {
+      case Position.Top:
+        setTop(val);
+        if (val && middle && !bottom) {props.enable();}
+        break;
+      case Position.Middle:
+        setMiddle(val);
+        if (top && val && !bottom) {props.enable();}
+        break;
+      case Position.Bottom:
+        setBottom(val);
+        if (top && middle && !val) {props.enable();}
+    }
+  }
 
   return (
     <div id='python'>
@@ -58,10 +85,9 @@ function Python(): JSX.Element {
         </div>
         <div id='output'>
           <div id='dropdowns'>
-            {/* TODO: replace change with actual functionality */}
-            <BooleanDropdown onChange={() => void 0} position={Position.Top}/>
-            <BooleanDropdown onChange={() => void 0} position={Position.Middle}/>
-            <BooleanDropdown onChange={() => void 0} position={Position.Bottom}/>
+            <BooleanDropdown onChange={(value) => selected(value,Position.Top)} position={Position.Top}/>
+            <BooleanDropdown onChange={(value) => selected(value,Position.Middle)} position={Position.Middle}/>
+            <BooleanDropdown onChange={(value) => selected(value,Position.Bottom)} position={Position.Bottom}/>
           </div>
         </div>
       </div>
