@@ -1,5 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
+import logo_light from '../../assets/teachla-logo-light.svg';
+import wordmark from '../../assets/teachla-wordmark-light.svg';
 import LevelSelect from './levelSelect';
 import '../../styles/sidebar.scss';
 
@@ -30,6 +32,10 @@ function Sidebar(): JSX.Element {
         {desc[pages.indexOf(current)]}
       </div>
       <LevelSelect/>
+      <a id='teachlaLink' href="https://teachla.uclaacm.com/">
+        <img className="linkImg" src={logo_light} alt="ACM TeachLA's logo"/>
+        <img className="linkImg" src={wordmark} alt="acm.teachLA"/>
+      </a>
     </div>
   );
 }
