@@ -74,7 +74,7 @@ function Python(props:PythonProps): JSX.Element {
         setBottom(val);
         if (top && middle && !val) {props.enable();}
     }
-  }
+  };
 
   return (
     <div id='python'>

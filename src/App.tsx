@@ -16,8 +16,8 @@ import Sidebar from './components/shared/sidebar';
 
 function App(): JSX.Element {
   const [enabled, setEnabled] = useState(false);
-  const enable = () => {setEnabled(true);}
-  const disable = () => {setEnabled(false);}
+  const enable = () => {setEnabled(true);};
+  const disable = () => {setEnabled(false);};
   return (
     <Router>
       <Sidebar/>

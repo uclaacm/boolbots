@@ -2,7 +2,7 @@ import '../../styles/nextButton.scss';
 import {Link, useLocation} from 'react-router-dom';
 
 interface NextButtonProps {
-  isEnabled: Boolean;
+  isEnabled: boolean;
   disable: () => void;
 }
 
