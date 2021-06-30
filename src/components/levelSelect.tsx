@@ -1,14 +1,8 @@
 import '../styles/levelSelect.scss';
 import {useState, useEffect} from 'react';
 import Dropdown, { Option } from 'react-dropdown';
-import { BsArrowUpShort, BsArrowDownShort } from 'react-icons/bs';
-import {
-  IoMdArrowDroprightCircle,
-  IoMdArrowDropleftCircle,
-} from 'react-icons/io';
-import {
-  useHistory,
-} from 'react-router-dom';
+import { BsCaretLeftFill , BsCaretRightFill, BsFillCaretUpFill, BsFillCaretDownFill } from 'react-icons/bs';
+import { useHistory } from 'react-router-dom';
 
 interface LevelSelectProps {
   pages: string[];
@@ -74,16 +68,16 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
 
   return (
     <div className="dropdown-container">
-      <IoMdArrowDropleftCircle onClick={leftArrowOnClick} className="left-arrow" size={20} />
+      <BsCaretLeftFill onClick={leftArrowOnClick} className="left-arrow" size={30} />
       <Dropdown
         options={pageArray}
         baseClassName="dropdown"
         onChange={onPageChange}
         value={currentDisplay}
-        arrowClosed={<BsArrowUpShort/>}
-        arrowOpen={<BsArrowDownShort/>}
+        arrowClosed={<BsFillCaretUpFill size={10} />}
+        arrowOpen={<BsFillCaretDownFill size={10} />}
       />
-      <IoMdArrowDroprightCircle onClick={rightArrowOnClick} className="right-arrow" size={20} />
+      <BsCaretRightFill onClick={rightArrowOnClick} className="right-arrow" size={30} />
     </div>
   );
 

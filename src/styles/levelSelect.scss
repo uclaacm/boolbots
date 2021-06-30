@@ -16,17 +16,16 @@
   display: flex;
   flex-direction: column-reverse;
   font-family: $main-font;
-  font-size: 24px;
+  font-size: 18px;
   text-align: center;
   width: 100%;
 }
   
 .dropdown-control {
-  background-color: white;
+  background-color: rgba($color: #fff, $alpha: 0.7);
   border-radius: 2em;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  padding: 0.1em 0;
 }
   
 .dropdown-control:hover {
@@ -34,14 +33,16 @@
 }
   
 .dropdown-placeholder {
-  align-self: start;
+  align-self: center;
   grid-column: 2;
+  margin: 0.4em 0;
 }
 
 //dropdown-option classes
 .dropdown-option {
   background-color: white;
-  padding: 0.1em 0;
+  opacity: 70%;
+  padding: 0.2em 0;
 }
   
 .dropdown-option:hover {
@@ -62,26 +63,25 @@
   display: inherit;
   grid-column: 3;
   justify-self: left;
-  padding-bottom: 2.5px;
+  margin-bottom: 13px;
+  margin-left: 5px;
 }
 
 .left-arrow {
-  align-items: center;
-  bottom: 6px;
-  display: flex;
-  left: 8px;
+  bottom: 2.5px;
+  color: white;
+  left: 0;
   margin-right: -1.5em;
   position: absolute;
   z-index: 1;
 }
 
 .right-arrow {
-  align-items: center;
-  bottom: 6px;
-  display: flex;
+  bottom: 2.5px;
+  color: white;
   margin-left: -1.5em;
   position: absolute;
-  right: 8px;
+  right: 0;
   z-index: 1;
 }
 
