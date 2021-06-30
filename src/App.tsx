@@ -16,8 +16,6 @@ import Sidebar from './components/shared/sidebar';
 
 function App(): JSX.Element {
   const [enabled, setEnabled] = useState(false);
-  const enable = () => {setEnabled(true);};
-  const disable = () => {setEnabled(false);};
   return (
     <Router>
       <Sidebar/>
@@ -25,10 +23,10 @@ function App(): JSX.Element {
         <Switch>
           <Route exact path="/"> <Landing/> </Route>
           <Route path="/variable"> <Variable/> </Route>
-          <Route path="/python"> <Python enable={enable}/> </Route>
+          <Route path="/python"> <Python onCorrect={() => setEnabled(true)}/> </Route>
         </Switch>
       </div>
-      <NextButton isEnabled={enabled} disable={disable}/>
+      <NextButton isEnabled={enabled} onClick={() => setEnabled(false)}/>
     </Router>
   );
 }

@@ -5,11 +5,12 @@ import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
 interface PythonProps {
-  enable: () => void;
+  onCorrect: () => void;
 }
 
 function Python(props:PythonProps): JSX.Element {
 
+  const dropdowns = [Position.Top,Position.Middle,Position.Bottom];
   const code: lineOfCode[] = [
     [
       { ['num_of_antennas']: Color.White },
@@ -55,24 +56,19 @@ function Python(props:PythonProps): JSX.Element {
     ],
   ];
 
-  const [top, setTop] = useState(false);
-  const [middle, setMiddle] = useState(false);
-  const [bottom,setBottom] = useState(false);
+  const [dropValues, setDropValues] = useState({
+    top: false,
+    middle: false,
+    bottom: false,
+  });
 
   const selected = (value:string, pos:Position) => {
     const val = value === 'True';
-    switch (pos) {
-      case Position.Top:
-        setTop(val);
-        if (val && middle && !bottom) {props.enable();}
-        break;
-      case Position.Middle:
-        setMiddle(val);
-        if (top && val && !bottom) {props.enable();}
-        break;
-      case Position.Bottom:
-        setBottom(val);
-        if (top && middle && !val) {props.enable();}
+    const newDropValues = dropValues;
+    newDropValues[pos] = val;
+    setDropValues(newDropValues);
+    if (newDropValues.top && newDropValues.middle && !newDropValues.bottom) {
+      props.onCorrect();
     }
   };
 
@@ -85,9 +81,9 @@ function Python(props:PythonProps): JSX.Element {
         </div>
         <div id='output'>
           <div id='dropdowns'>
-            <BooleanDropdown onChange={(value) => selected(value,Position.Top)} position={Position.Top}/>
-            <BooleanDropdown onChange={(value) => selected(value,Position.Middle)} position={Position.Middle}/>
-            <BooleanDropdown onChange={(value) => selected(value,Position.Bottom)} position={Position.Bottom}/>
+            {dropdowns.map((dropdown) => (
+              <BooleanDropdown key={dropdown} onChange={(value) => selected(value,dropdown)} position={dropdown}/>
+            ))}
           </div>
         </div>
       </div>

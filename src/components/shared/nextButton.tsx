@@ -3,7 +3,7 @@ import {Link, useLocation} from 'react-router-dom';
 
 interface NextButtonProps {
   isEnabled: boolean;
-  disable: () => void;
+  onClick: () => void;
 }
 
 function NextButton(props:NextButtonProps): JSX.Element {
@@ -21,9 +21,11 @@ function NextButton(props:NextButtonProps): JSX.Element {
     return (<div></div>);
   } else {
     return (
-      props.isEnabled ?
-        <Link to={nextPage} className='nextButton' id='enabled'onClick={props.disable} >next</Link>
-        :<Link to='' className='nextButton' onClick={(e) => e.preventDefault()} >next</Link>
+      <Link to={nextPage}>
+        <button className='nextButton' id={props.isEnabled ?'enabled':''} disabled={!props.isEnabled} onClick={props.onClick}>
+          next
+        </button>
+      </Link>
     );
   }
 }
