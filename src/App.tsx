@@ -11,9 +11,9 @@ import {
 import Landing from './components/pages/landing';
 import Python from './components/pages/python';
 import Variable from './components/pages/variable';
+import Footer from './components/shared/footer';
 import NextButton from './components/shared/nextButton';
 import Sidebar from './components/shared/sidebar';
-import Footer from './components/shared/footer';
 
 function App(): JSX.Element {
   return (
