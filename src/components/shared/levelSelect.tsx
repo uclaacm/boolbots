@@ -22,63 +22,48 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
     });
   };
 
-  const pageArray = createDropDownItems();
-
-  const [currentDisplay, setCurrentDisplay] = useState<Option>();
-
-  const updateCurrentDisplay = (index:number) => {
-    const optionCopy = pageArray[index];
-    optionCopy.label = <div>Level {index + 1} of 9</div>;
-    setCurrentDisplay(optionCopy);
-  };
+  const [currIndex, setcurrIndex] = useState(pages.indexOf(locationPathName));
 
   const history = useHistory();
 
-  let lastPage = locationPathName;
   const onPageChange = (currentOption:Option):void => {
-    // if the same option was selected, still update the display but don't route anywhere
-    if (lastPage == currentOption.value) {
-      updateCurrentDisplay(pages.indexOf(lastPage));
+    const newIndex = pages.indexOf((currentOption.value));
+
+    if (newIndex == currIndex) {
+      /*
+ if the index wasn't actually changed, force component to rerender so
+ that "value" prop to dropdown still remains as the label on the dropdown
+*/
+      history.push(pages[currIndex]);
     } else {
-      lastPage = currentOption.value;
-      history.push(currentOption.value);
+      setcurrIndex(newIndex);
     }
   };
 
-  // need this so that the levelSelect refreshes its display when location changes via next button as well
+  const setIndex = (newIndex:number) => {
+    if (newIndex >= 0 && newIndex <= 8) {
+      setcurrIndex(newIndex);
+    }
+  };
+
   useEffect(() => {
-    updateCurrentDisplay(pages.indexOf(locationPathName));
-  }, [locationPathName]);
+    const newPage = pages[currIndex];
+    history.push(newPage);
+  }, [currIndex]);
 
-
-  const leftArrowOnClick = () => {
-    const pageIndex = pages.indexOf(locationPathName);
-    if (pageIndex > 0) {
-      const newPage = pages[pageIndex - 1];
-      history.push(newPage);
-    }
-  };
-
-  const rightArrowOnClick = () => {
-    const pageIndex = pages.indexOf(locationPathName);
-    if (pageIndex < 8) {
-      const newPage = pages[pageIndex + 1];
-      history.push(newPage);
-    }
-  };
 
   return (
     <div className="dropdown-container">
-      <BsCaretLeftFill onClick={leftArrowOnClick} className="left-arrow" size={30} />
+      <BsCaretLeftFill onClick={() => setIndex(currIndex - 1)} className="left-arrow" size={30} />
       <Dropdown
-        options={pageArray}
+        options={createDropDownItems()}
         baseClassName="dropdown"
         onChange={onPageChange}
-        value={currentDisplay}
+        value={{label: <div>Level {currIndex + 1} of 9</div>, value: pages[currIndex]}}
         arrowClosed={<BsFillCaretUpFill size={10} />}
         arrowOpen={<BsFillCaretDownFill size={10} />}
       />
-      <BsCaretRightFill onClick={rightArrowOnClick} className="right-arrow" size={30} />
+      <BsCaretRightFill onClick={() => setIndex(currIndex + 1)} className="right-arrow" size={30} />
     </div>
   );
 
