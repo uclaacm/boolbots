@@ -29,7 +29,8 @@
 }
   
 .dropdown-control:hover {
-  background-color: #808080;
+  background-color: #adadad;
+  cursor: pointer;
 }
   
 .dropdown-placeholder {
@@ -40,13 +41,13 @@
 
 //dropdown-option classes
 .dropdown-option {
-  background-color: white;
-  opacity: 70%;
+  background-color: rgba($color: #fff, $alpha: 0.7);
   padding: 0.2em 0;
 }
   
 .dropdown-option:hover {
-  background-color: #808080;
+  background-color: #adadad;
+  cursor: pointer;
 }
   
 .dropdown-option:first-child {
@@ -86,6 +87,7 @@
 }
 
 .right-arrow:hover,
-.leftarrow:hover {
-  color: #808080;
+.left-arrow:hover {
+  color: #adadad;
+  cursor: pointer;
 }
