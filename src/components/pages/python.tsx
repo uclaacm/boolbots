@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import '../../styles/python.scss';
-import {BooleanDropdown, Position} from '../shared/booleanDropdown';
+import {BooleanDropdown} from '../shared/booleanDropdown';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
@@ -10,7 +10,6 @@ interface PythonProps {
 
 function Python(props:PythonProps): JSX.Element {
 
-  const dropdowns = [Position.Top,Position.Middle,Position.Bottom];
   const code: lineOfCode[] = [
     [
       { ['num_of_antennas']: Color.White },
@@ -62,15 +61,17 @@ function Python(props:PythonProps): JSX.Element {
     bottom: false,
   });
 
-  const selected = (value:string, pos:Position) => {
+  const selected = (value:string, pos:string) => {
     const val = value === 'True';
-    const newDropValues = dropValues;
-    newDropValues[pos] = val;
+    const newDropValues = {...dropValues, [pos]: val};
     setDropValues(newDropValues);
-    if (newDropValues.top && newDropValues.middle && !newDropValues.bottom) {
+  };
+
+  useEffect(() => {
+    if (dropValues.top && dropValues.middle && !dropValues.bottom) {
       props.onCorrect();
     }
-  };
+  },[dropValues]);
 
   return (
     <div id='python'>
@@ -81,7 +82,7 @@ function Python(props:PythonProps): JSX.Element {
         </div>
         <div id='output'>
           <div id='dropdowns'>
-            {dropdowns.map((dropdown) => (
+            {Object.keys(dropValues).map((dropdown) => (
               <BooleanDropdown key={dropdown} onChange={(value) => selected(value,dropdown)} position={dropdown}/>
             ))}
           </div>
