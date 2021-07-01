@@ -26,22 +26,10 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
 
   const history = useHistory();
 
-  const onPageChange = (currentOption:Option):void => {
-    const newIndex = pages.indexOf((currentOption.value));
-
-    if (newIndex == currIndex) {
-      /*
- if the index wasn't actually changed, force component to rerender so
- that "value" prop to dropdown still remains as the label on the dropdown
-*/
-      history.push(pages[currIndex]);
-    } else {
-      setcurrIndex(newIndex);
-    }
-  };
-
   const setIndex = (newIndex:number) => {
-    if (newIndex >= 0 && newIndex <= 8) {
+    if (newIndex == currIndex) {
+      history.push(pages[currIndex]);
+    } else if (newIndex >= 0 && newIndex <= 8) {
       setcurrIndex(newIndex);
     }
   };
@@ -58,7 +46,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
       <Dropdown
         options={createDropDownItems()}
         baseClassName="dropdown"
-        onChange={onPageChange}
+        onChange={(option) => setIndex(pages.indexOf(option.value))}
         value={{label: <div>Level {currIndex + 1} of 9</div>, value: pages[currIndex]}}
         arrowClosed={<BsFillCaretUpFill size={10} />}
         arrowOpen={<BsFillCaretDownFill size={10} />}
