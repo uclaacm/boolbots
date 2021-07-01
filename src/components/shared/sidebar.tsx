@@ -20,14 +20,16 @@ function Sidebar(): JSX.Element {
   const current = location.pathname;
   return (
     <div id="sidebar">
-      <div id='header'>
-        <div id='title'>
-          BoolBots
+      <div>
+        <div id='header'>
+          <div id='title'>
+            BoolBots
+          </div>
+          <img id='logo' src={logo}/>
         </div>
-        <img id='logo' src={logo}/>
-      </div>
-      <div id='desc'>
-        {desc[pages.indexOf(current)]}
+        <div id='desc'>
+          {desc[pages.indexOf(current)]}
+        </div>
       </div>
       <LevelSelect/>
     </div>

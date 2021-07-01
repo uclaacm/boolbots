@@ -1,6 +1,3 @@
-import '../../styles/landing.scss';
-
-
 import robot from '../../assets/robots/robotpg7.svg';
 
 import {BooleanDropdown, Position} from '../shared/booleanDropdown';

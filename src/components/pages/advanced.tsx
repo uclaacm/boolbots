@@ -1,6 +1,3 @@
-import '../../styles/landing.scss';
-
-
 import robot1 from '../../assets/robots/pg6/robot1pg6.svg';
 import robot2 from '../../assets/robots/pg6/robot2pg6.svg';
 import robot3 from '../../assets/robots/pg6/robot3pg6.svg';

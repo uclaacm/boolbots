@@ -1,4 +1,4 @@
-import '../../styles/landing.scss';
+import '../../styles/equal.scss';
 
 
 import robot1 from '../../assets/robots/pg3/robot1pg3.svg';
@@ -36,6 +36,11 @@ function Equal(): JSX.Element {
         <div className="code-and-output">
           <div id='code'>
             <CodeFormat code={code}/>
+            <div id="arrows">
+              <div>---------------------------------------------------------▶</div>
+              <div>---------------------------------------------------------▶</div>
+              <div>---------------------------------------------------------▶</div>
+            </div>
           </div>
           <div id="output">
             <div className="output-items">

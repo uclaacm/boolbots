@@ -76,7 +76,6 @@ $sidebar-width: 275px;
   border-radius: $rectangle-corner-radius;
   display: flex;
   padding-left: 3vw;
-  // width: 180px;
 }
 
 .output-items {
@@ -87,7 +86,6 @@ $sidebar-width: 275px;
 }
 
 h1 {
-  // margin: 0;
   align-self: center;
   font-family: $main-font;
   font-size: $subtitle-font-size;
@@ -98,22 +96,17 @@ h1 {
 .frame {
   align-items: center;
   box-sizing: border-box;
-
   display: flex;
-  // margin: auto 0;
   height: 100vh;
   justify-content: center;
-  padding: 5vw 1vw 5vw 10vw;
+  padding: 5vw;
   width: 100%;
-  // flex-direction: column;
-
 }
 
 .code-and-output {
   display: grid;
   gap: 1vw;
   grid-template-columns: 70% auto;
-  // height: 50%;
 }
 
 .robots {

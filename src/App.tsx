@@ -23,18 +23,20 @@ import Sidebar from './components/shared/sidebar';
 function App(): JSX.Element {
   return (
     <Router>
-      <Sidebar/>
-      <div id = "contents">
-        <Switch>
-          <Route exact path="/"> <Landing/> </Route>
-          <Route path="/variable"> <Variable/> </Route>
-          <Route path="/equal"> <Equal/> </Route>
-          <Route path="/comparison"> <Comparison/> </Route>
-          <Route path="/boolean"> <Boolean/> </Route>
-          <Route path="/advanced"> <Advanced/> </Route>
-          <Route path="/output"> <Output/> </Route>
-          <Route path="/python"> <Python/> </Route>
-        </Switch>
+      <div id="app-container">
+        <Sidebar/>
+        <div id = "contents">
+          <Switch>
+            <Route exact path="/"> <Landing/> </Route>
+            <Route path="/variable"> <Variable/> </Route>
+            <Route path="/equal"> <Equal/> </Route>
+            <Route path="/comparison"> <Comparison/> </Route>
+            <Route path="/boolean"> <Boolean/> </Route>
+            <Route path="/advanced"> <Advanced/> </Route>
+            <Route path="/output"> <Output/> </Route>
+            <Route path="/python"> <Python/> </Route>
+          </Switch>
+        </div>
       </div>
       <NextButton/>
     </Router>

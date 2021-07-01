@@ -3,17 +3,16 @@
 #nextButton {
   background-color: $main-orange;
   border-radius: 20px;
+  bottom: 30px;
   color: black;
   font-family: $main-font;
   font-size: 24px;
   height: 27px;
   line-height: 23px;
-  margin-top: calc(100vh - 70px);
   padding: 5px 20px;
   position: absolute;
   right: 30px;
   text-align: center;
   text-decoration: none;
-  top: 0;
   width: 45px;
 }
