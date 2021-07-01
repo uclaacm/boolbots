@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
-import logo from '../assets/logo.svg';
+import logo from '../../assets/logo.svg';
 import LevelSelect from './levelSelect';
-import '../styles/sidebar.scss';
+import '../../styles/sidebar.scss';
 
 function Sidebar(): JSX.Element {
   const pages = ['/','/variable','/equal','/comparison','/boolean','/advanced','/output','/python','/experiment'];

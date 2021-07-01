@@ -1,5 +1,6 @@
-import '../styles/levelSelect.scss';
+
 import {useState, useEffect} from 'react';
+import '../../styles/levelSelect.scss';
 import Dropdown, { Option } from 'react-dropdown';
 import { BsCaretLeftFill , BsCaretRightFill, BsFillCaretUpFill, BsFillCaretDownFill } from 'react-icons/bs';
 import { useHistory } from 'react-router-dom';

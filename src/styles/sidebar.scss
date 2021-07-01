@@ -7,7 +7,8 @@
   font-family: $main-font;
   height: 100vh;
   padding-left: 10px;
-  width: 275px;
+  position: absolute;
+  width: $sidebar-width;
 }
 
 #header {
@@ -20,7 +21,7 @@
 
 #title {
   color: white;
-  font-size: 2em;
+  font-size: 36px;
   font-style: normal;
   font-weight: 500;
   line-height: 33px;
@@ -31,14 +32,14 @@
 }
 
 #logo {
-  height: 8vh;
   left: 5px;
   position: relative;
   top: 5px;
-  width: 55px;
+  width: 65px;
 }
 
 #desc {
+  font-size: 18px;
   padding-left: 15px;
   padding-right: 15px;
 }

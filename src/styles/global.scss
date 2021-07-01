@@ -4,6 +4,42 @@
     url('../assets/WestwoodSans-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Roboto Mono';
+  src: local('Roboto Mono'),
+    url('../assets/RobotoMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Darker Grotesque';
+  font-weight: bold;
+  src: local('DarkerGrotesque'),
+    url('../assets/DarkerGrotesque-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Darker Grotesque';
+  font-weight: medium;
+  src: local('DarkerGrotesque'),
+    url('../assets/DarkerGrotesque-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Darker Grotesque';
+  font-weight: regular;
+  src: local('DarkerGrotesque'),
+    url('../assets/DarkerGrotesque-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Darker Grotesque';
+  font-weight: semiBold;
+  src: local('DarkerGrotesque'),
+    url('../assets/DarkerGrotesque-SemiBold.ttf') format('truetype');
+}
+
+
+
 body {
   margin: 0;
 }
@@ -18,3 +54,7 @@ $code-font: 'Roboto Mono', monospace;
 $code-font-size: 18px;
 $output-font-size: 20px;
 $sidebar-font-size: 18px;
+$subtitle-font-size: 36px;
+$subtitle-line-height: 91.6%;
+$rectangle-corner-radius: 8px;
+$sidebar-width: 275px;
