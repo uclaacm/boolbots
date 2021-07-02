@@ -1,9 +1,14 @@
+import { useState, useEffect} from 'react';
 import '../../styles/python.scss';
-import {BooleanDropdown, Position} from '../shared/booleanDropdown';
+import {BooleanDropdown} from '../shared/booleanDropdown';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
-function Python(): JSX.Element {
+interface PythonProps {
+  onCorrect: () => void;
+}
+
+function Python(props:PythonProps): JSX.Element {
 
   const code: lineOfCode[] = [
     [
@@ -45,9 +50,28 @@ function Python(): JSX.Element {
       { ['print']: Color.Orange },
       { ['(color']: Color.White },
       { [' != ']: Color.Orange },
-      { ['"red")']: Color.White},
+      { ['"red"']: Color.Blue},
+      { [')']: Color.White},
     ],
   ];
+
+  const [dropValues, setDropValues] = useState({
+    top: false,
+    middle: false,
+    bottom: false,
+  });
+
+  const selected = (value:string, pos:string) => {
+    const val = value === 'True';
+    const newDropValues = {...dropValues, [pos]: val};
+    setDropValues(newDropValues);
+  };
+
+  useEffect(() => {
+    if (dropValues.top && dropValues.middle && !dropValues.bottom) {
+      props.onCorrect();
+    }
+  },[dropValues]);
 
   return (
     <div id='python'>
@@ -58,10 +82,9 @@ function Python(): JSX.Element {
         </div>
         <div id='output'>
           <div id='dropdowns'>
-            {/* TODO: replace change with actual functionality */}
-            <BooleanDropdown onChange={() => void 0} position={Position.Top}/>
-            <BooleanDropdown onChange={() => void 0} position={Position.Middle}/>
-            <BooleanDropdown onChange={() => void 0} position={Position.Bottom}/>
+            {Object.keys(dropValues).map((dropdown) => (
+              <BooleanDropdown key={dropdown} onChange={(value) => selected(value,dropdown)} position={dropdown}/>
+            ))}
           </div>
         </div>
       </div>

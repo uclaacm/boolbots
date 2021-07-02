@@ -3,17 +3,11 @@ import '../../styles/booleanDropdown.scss';
 
 const options = ['True', 'False'];
 
-export enum Position {
-  Top = 'top',
-  Middle = 'middle',
-  Bottom = 'bottom'
-}
-
 interface BooleanDropdownProps {
-  onChange: () => void;
-  position: Position;
+  onChange: (option: string) => void;
+  position: string;
 }
 
 export function BooleanDropdown(props:BooleanDropdownProps):JSX.Element  {
-  return <Dropdown className={'drop '+props.position} options={options} value='False' arrowClassName='arrow' onChange={props.onChange}/>;
+  return <Dropdown className={'drop '+props.position} options={options} value='False' arrowClassName='arrow' onChange={(option) => props.onChange(option.value)}/>;
 }

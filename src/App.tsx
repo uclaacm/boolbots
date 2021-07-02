@@ -1,6 +1,6 @@
 import './assets/WestwoodSans-Regular.ttf';
 import './styles/app.scss';
-
+import { useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -16,6 +16,7 @@ import NextButton from './components/shared/nextButton';
 import Sidebar from './components/shared/sidebar';
 
 function App(): JSX.Element {
+  const [enabled, setEnabled] = useState(false);
   return (
     <Router>
       <Sidebar/>
@@ -23,10 +24,10 @@ function App(): JSX.Element {
         <Switch>
           <Route exact path="/"> <Landing/> </Route>
           <Route path="/variable"> <Variable/> </Route>
-          <Route path="/python"> <Python/> </Route>
+          <Route path="/python"> <Python onCorrect={() => setEnabled(true)}/> </Route>
         </Switch>
       </div>
-      <NextButton/>
+      <NextButton isEnabled={enabled} onClick={() => setEnabled(false)}/>
       <Footer/>
     </Router>
   );
