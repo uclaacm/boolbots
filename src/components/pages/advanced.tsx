@@ -20,11 +20,12 @@ function Advanced(): JSX.Element {
       { ['print']: Color.Orange },
       { ['(color']: Color.White },
       { [' == ']: Color.Orange },
-      { ['"red"']: Color.White },
+      { ['"red"']: Color.Green },
       { [' and ']: Color.Orange },
       { ['color']: Color.White },
       { [' != ']: Color.Orange },
-      { ['"blue")']: Color.White },
+      { ['"blue"']: Color.Green },
+      { [')']: Color.White },
     ],
     [
       { ['print']: Color.Orange },
@@ -32,13 +33,15 @@ function Advanced(): JSX.Element {
       { ['not ']: Color.Orange },
       { ['head_shape']: Color.White },
       { [' == ']: Color.Orange },
-      { ['"circle")']: Color.White },
+      { ['"circle"']: Color.Green },
+      { [')']: Color.White },
+
     ],
   ];
 
   return (
     <div className="frame">
-      <div id="landing" className='robot-layout'>
+      <div id="advanced" className='robot-layout'>
         <div className="code-and-output">
           <div id='code'>
             <CodeFormat code={code}/>
@@ -55,10 +58,18 @@ function Advanced(): JSX.Element {
 
         <h1>Select the matching robot:</h1>
         <div className="robots">
-          <img src={robot1} alt="red robot, circle head, with mouth, 1 antenna, 2 arms, 1 button"></img>
-          <img src={robot2} alt="red robot, square head, with mouth, 1 antenna, 0 arms, 1 button"></img>
-          <img src={robot3} alt="blue robot, triangle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
-          <img src={robot4} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 1 button"></img>
+          <button className="robot-button">
+            <img src={robot1} alt="red robot, circle head, with mouth, 1 antenna, 2 arms, 1 button"></img>
+          </button>
+          <button className="robot-button">
+            <img src={robot2} alt="red robot, square head, with mouth, 1 antenna, 0 arms, 1 button"></img>
+          </button>
+          <button className="robot-button">
+            <img src={robot3} alt="blue robot, triangle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
+          </button>
+          <button className="robot-button">
+            <img src={robot4} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 1 button"></img>
+          </button>
         </div>
       </div>
     </div>

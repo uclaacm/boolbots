@@ -26,13 +26,14 @@ function Equal(): JSX.Element {
       { ['print']: Color.Orange },
       { ['(color']: Color.White },
       { [' == ']: Color.Orange },
-      { ['"green")']: Color.White },
+      { ['"green"']: Color.Green },
+      { [')']: Color.White },
     ],
   ];
 
   return (
     <div className="frame">
-      <div id="landing" className='robot-layout'>
+      <div id="equal" className='robot-layout'>
         <div className="code-and-output">
           <div id='code'>
             <CodeFormat code={code}/>
@@ -54,10 +55,18 @@ function Equal(): JSX.Element {
 
         <h1>Select the matching robot:</h1>
         <div className="robots">
-          <img src={robot1} alt="blue robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
-          <img src={robot2} alt="red robot, circle head, with mouth, 1 antenna, 2 arms, 3 buttons"></img>
-          <img src={robot3} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
-          <img src={robot4} alt="green robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
+          <button className="robot-button">
+            <img className="robot-image" src={robot1} alt="blue robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
+          </button>
+          <button className="robot-button">
+            <img className="robot-image" src={robot2} alt="red robot, circle head, with mouth, 1 antenna, 2 arms, 3 buttons"></img>
+          </button>
+          <button className="robot-button">
+            <img className="robot-image" src={robot3} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
+          </button>
+          <button className="robot-button">
+            <img className="robot-image" src={robot4} alt="green robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
+          </button>
         </div>
       </div>
     </div>

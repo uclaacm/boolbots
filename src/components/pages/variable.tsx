@@ -20,21 +20,29 @@ function Variable(): JSX.Element {
     [
       { ['color']: Color.White },
       { [' = ']: Color.Orange },
-      { ['"blue"']: Color.White }    ],
+      { ['"blue"']: Color.Green }    ],
   ];
 
   return (
     <div className="frame">
-      <div id="landing" className='robot-layout'>
+      <div id="variable" className='robot-layout'>
         <div id='code'>
           <CodeFormat code={code}/>
         </div>
         <h1>Select the matching robot:</h1>
         <div className="robots">
-          <img src={robot1} alt="blue robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
-          <img src={robot2} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
-          <img src={robot3} alt="blue robot, circle head, no mouth, 1 antenna, 2 arms, 3 buttons"></img>
-          <img src={robot4} alt="blue robot, circle head, with mouth, 0 antenna, 2 arms, 3 buttons"></img>
+          <button className="robot-button">
+            <img className="robot-image" src={robot1} alt="blue robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
+          </button>
+          <button className="robot-button">
+            <img className="robot-image" src={robot2} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
+          </button>
+          <button className="robot-button">
+            <img className="robot-image" src={robot3} alt="blue robot, circle head, no mouth, 1 antenna, 2 arms, 3 buttons"></img>
+          </button>
+          <button className="robot-button">
+            <img className="robot-image" src={robot4} alt="blue robot, circle head, with mouth, 0 antenna, 2 arms, 3 buttons"></img>
+          </button>
         </div>
       </div>
     </div>

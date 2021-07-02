@@ -22,13 +22,14 @@ function Output(): JSX.Element {
       { ['print']: Color.Orange },
       { ['(color']: Color.White },
       { [' == ']: Color.Orange },
-      { ['"green")']: Color.White },
+      { ['"green"']: Color.Green },
+      { [')']: Color.White },
     ],
   ];
 
   return (
     <div className="frame">
-      <div id="landing" className='robot-layout'>
+      <div id="output_frame" className='robot-layout'>
         <div className="code-and-output">
           <div id='code'>
             <CodeFormat code={code}/>

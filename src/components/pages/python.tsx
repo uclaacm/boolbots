@@ -24,7 +24,7 @@ function Python(): JSX.Element {
     [
       { ['color']: Color.White },
       { [' = ']: Color.Orange },
-      { ['"white"']: Color.Blue },
+      { ['"white"']: Color.Green },
     ],
     [],
     [
@@ -45,7 +45,8 @@ function Python(): JSX.Element {
       { ['print']: Color.Orange },
       { ['(color']: Color.White },
       { [' != ']: Color.Orange },
-      { ['"red")']: Color.White},
+      { ['"red"']: Color.Green},
+      { [')']: Color.White},
     ],
   ];
 

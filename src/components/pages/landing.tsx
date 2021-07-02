@@ -27,10 +27,18 @@ function Landing(): JSX.Element {
         </div>
         <h1>Select the matching robot:</h1>
         <div className="robots">
-          <img src={robot1} alt="green robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
-          <img src={robot2} alt="red robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
-          <img src={robot3} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
-          <img src={robot4} alt="blue robot, circle head, with mouth, 0 antenna, 2 arms, 3 buttons"></img>
+          <button className="robot-button">
+            <img className="robot-image" src={robot1} alt="green robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
+          </button>
+          <button className="robot-button">
+            <img className="robot-image" src={robot2} alt="red robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
+          </button>
+          <button className="robot-button">
+            <img className="robot-image" src={robot3} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
+          </button>
+          <button className="robot-button">
+            <img className="robot-image" src={robot4} alt="blue robot, circle head, with mouth, 0 antenna, 2 arms, 3 buttons"></img>
+          </button>
         </div>
       </div>
     </div>
