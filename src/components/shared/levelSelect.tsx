@@ -6,52 +6,57 @@ import { BsCaretLeftFill , BsCaretRightFill, BsFillCaretUpFill, BsFillCaretDownF
 import { useHistory } from 'react-router-dom';
 
 interface LevelSelectProps {
-  pages: string[];
-  locationPathName: string;
+  pageOptions: string[];
+  currentPage: string;
 }
 
 function LevelSelect(props:LevelSelectProps): JSX.Element {
-  const { pages, locationPathName } = props;
+  const { pageOptions, currentPage } = props;
+
+  const [index, setIndex] = useState(pageOptions.indexOf(currentPage));
+
+  const history = useHistory();
 
   const createDropDownItems = ():Option[] => {
-    return pages.map((item, index) => {
+    return pageOptions.map((item, itemIndex) => {
       return  ({
-        label: <div>{index + 1}</div>,
+        label: <div>{itemIndex + 1}</div>,
         value: item,
       });
     });
   };
 
-  const [currIndex, setcurrIndex] = useState(pages.indexOf(locationPathName));
-
-  const history = useHistory();
-
-  const setIndex = (newIndex:number) => {
-    if (newIndex == currIndex) {
-      history.push(pages[currIndex]);
-    } else if (newIndex >= 0 && newIndex <= 8) {
-      setcurrIndex(newIndex);
+  const onLevelChange = (newIndex:number) => {
+    if (newIndex == index) {
+      history.push(pageOptions[index]);
+    } else {
+      setIndex(newIndex);
     }
   };
 
   useEffect(() => {
-    const newPage = pages[currIndex];
+    if (index > 8) {
+      setIndex(8);
+    }
+    if (index < 0) {
+      setIndex(0);
+    }
+    const newPage = pageOptions[index];
     history.push(newPage);
-  }, [currIndex]);
-
+  }, [index]);
 
   return (
     <div className="dropdown-container">
-      <BsCaretLeftFill onClick={() => setIndex(currIndex - 1)} className="left-arrow" size={30} />
+      <BsCaretLeftFill onClick={() => setIndex(index - 1)} className="select-arrow" size={30} />
       <Dropdown
         options={createDropDownItems()}
         baseClassName="dropdown"
-        onChange={(option) => setIndex(pages.indexOf(option.value))}
-        value={{label: <div>Level {currIndex + 1} of 9</div>, value: pages[currIndex]}}
+        onChange={(option) => onLevelChange(pageOptions.indexOf(option.value))}
+        value={{label: <span>Level {index + 1} of 9</span>, value: pageOptions[index]}}
         arrowClosed={<BsFillCaretUpFill size={10} />}
         arrowOpen={<BsFillCaretDownFill size={10} />}
       />
-      <BsCaretRightFill onClick={() => setIndex(currIndex + 1)} className="right-arrow" size={30} />
+      <BsCaretRightFill onClick={() => setIndex(index + 1)} className="select-arrow" size={30} />
     </div>
   );
 
