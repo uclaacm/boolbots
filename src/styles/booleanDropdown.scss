@@ -9,9 +9,10 @@
   line-height: 23px;
   margin-bottom: 3px;
   min-height: 27px;
+  padding-right: 10px;
   position: absolute;
   width: 60px;
-  padding-right: 10px;
+
 }
 
 
@@ -52,11 +53,11 @@
 }
 
 .Dropdown-control {
+  border-radius: 3px;
   display: flex;
   min-height: 27px;
-  padding-left: 10px;
   min-width: 60px;
-  border-radius: 3px;
+  padding-left: 10px;
 }
 
 .Dropdown-control:hover {
@@ -69,8 +70,8 @@
 
 .option {
   background-color: lightgray;
-  padding-left: 10px;
   min-width: 60px;
+  padding-left: 10px;
 }
 
 .option:hover {
