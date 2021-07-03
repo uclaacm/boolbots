@@ -9,10 +9,11 @@
   line-height: 23px;
   margin-bottom: 3px;
   min-height: 27px;
-  padding-left: 10px;
   position: absolute;
   width: 60px;
+  padding-right: 10px;
 }
+
 
 .top {
   top: 0;
@@ -33,10 +34,17 @@
   background-color: lightgray;
 }
 
-.arrow {
+.arrow-closed {
   background: url('../assets/arrow.svg') no-repeat right;
   display: inline-block;
   padding: 4px;
+}
+
+.arrow-open {
+  background: url('../assets/arrow.svg') no-repeat right;
+  display: inline-block;
+  padding: 4px;
+  transform: scaleY(-1);
 }
 
 .Dropdown-arrow-wrapper {
@@ -45,9 +53,30 @@
 
 .Dropdown-control {
   display: flex;
+  min-height: 27px;
+  padding-left: 10px;
+  min-width: 60px;
+  border-radius: 3px;
+}
+
+.Dropdown-control:hover {
+  background-color: #adadad;
 }
 
 .Dropdown-placeholder.is-selected { //Dropdown selected option
   flex-grow: 1;
 }
 
+.option {
+  background-color: lightgray;
+  padding-left: 10px;
+  min-width: 60px;
+}
+
+.option:hover {
+  background-color: #adadad;
+}
+
+.second {
+  border-radius: 0 0 3px 3px;
+}

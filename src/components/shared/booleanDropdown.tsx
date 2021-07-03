@@ -1,7 +1,10 @@
 import Dropdown from 'react-dropdown';
 import '../../styles/booleanDropdown.scss';
 
-const options = ['True', 'False'];
+const options = [
+  { value: 'True', label: 'True', className: 'option'}, 
+  { value: 'False', label: 'False', className: 'option second'}
+];
 
 interface BooleanDropdownProps {
   onChange: (option: string) => void;
@@ -9,5 +12,11 @@ interface BooleanDropdownProps {
 }
 
 export function BooleanDropdown(props:BooleanDropdownProps):JSX.Element  {
-  return <Dropdown className={'drop '+props.position} options={options} value='False' arrowClassName='arrow' onChange={(option) => props.onChange(option.value)}/>;
+  return <Dropdown 
+  className={'drop '+props.position}   
+  options={options} 
+  value='False' 
+  arrowClosed={<div className='arrow-closed'/>}
+  arrowOpen={<div className='arrow-open'/>}
+  onChange={(option) => props.onChange(option.value)}/>;
 }
