@@ -15,6 +15,8 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
 
   const [index, setIndex] = useState(pageOptions.indexOf(currentPage));
 
+  const [reloadTime, setReloadTime] = useState(Date.now());
+
   const history = useHistory();
 
   const createDropDownItems = ():Option[] => {
@@ -27,11 +29,8 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
   };
 
   const onLevelChange = (newIndex:number) => {
-    if (newIndex == index) {
-      history.push(pageOptions[index]);
-    } else {
-      setIndex(newIndex);
-    }
+    setReloadTime(Date.now());
+    setIndex(newIndex);
   };
 
   useEffect(() => {
@@ -52,7 +51,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
         options={createDropDownItems()}
         baseClassName="dropdown"
         onChange={(option) => onLevelChange(pageOptions.indexOf(option.value))}
-        value={{label: <span>Level {index + 1} of 9</span>, value: pageOptions[index]}}
+        value={{label: <span key={reloadTime} >Level {index + 1} of 9</span>, value: pageOptions[index]}}
         arrowClosed={<BsFillCaretUpFill size={10} />}
         arrowOpen={<BsFillCaretDownFill size={10} />}
       />
