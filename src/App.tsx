@@ -34,7 +34,7 @@ function App(): JSX.Element {
             <Route path="/comparison"> <Comparison/> </Route>
             <Route path="/boolean"> <Boolean/> </Route>
             <Route path="/advanced"> <Advanced/> </Route>
-            <Route path="/output"> <Output/> </Route>
+            <Route path="/output"> <Output onCorrect={() => setEnabled(true)}/> </Route>
             <Route path="/python"> <Python onCorrect={() => setEnabled(true)}/> </Route>
           </Switch>
         </div>

@@ -1,10 +1,15 @@
+import { useState, useEffect } from 'react';
 import robot from '../../assets/robots/robotpg7.svg';
 
-import {BooleanDropdown, Position} from '../shared/booleanDropdown';
+import {BooleanDropdown} from '../shared/booleanDropdown';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
-function Output(): JSX.Element {
+interface OutputProps {
+  onCorrect: () => void;
+}
+
+function Output(props:OutputProps): JSX.Element {
 
   const code: lineOfCode[] = [
     [
@@ -27,6 +32,24 @@ function Output(): JSX.Element {
     ],
   ];
 
+  const [dropValues, setDropValues] = useState({
+    top: false,
+    middle: false,
+    bottom: false,
+  });
+
+  const selected = (value:string, pos:string) => {
+    const val = value === 'True';
+    const newDropValues = {...dropValues, [pos]: val};
+    setDropValues(newDropValues);
+  };
+
+  useEffect(() => {
+    if (dropValues.top && dropValues.middle && !dropValues.bottom) {
+      props.onCorrect();
+    }
+  },[dropValues]);
+
   return (
     <div className="frame">
       <div id="output_frame" className='robot-layout'>
@@ -36,10 +59,9 @@ function Output(): JSX.Element {
           </div>
           <div id="output">
             <div id='dropdowns'>
-              {/* TODO: replace change with actual functionality */}
-              <BooleanDropdown onChange={() => void 0} position={Position.Top}/>
-              <BooleanDropdown onChange={() => void 0} position={Position.Middle}/>
-              <BooleanDropdown onChange={() => void 0} position={Position.Bottom}/>
+              {Object.keys(dropValues).map((dropdown) => (
+                <BooleanDropdown key={dropdown} onChange={(value) => selected(value,dropdown)} position={dropdown}/>
+              ))}
             </div>
 
           </div>

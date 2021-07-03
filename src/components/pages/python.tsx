@@ -83,9 +83,9 @@ function Python(props:PythonProps): JSX.Element {
           </div>
           <div id='output'>
             <div id='dropdowns'>
-            {Object.keys(dropValues).map((dropdown) => (
-              <BooleanDropdown key={dropdown} onChange={(value) => selected(value,dropdown)} position={dropdown}/>
-            ))}
+              {Object.keys(dropValues).map((dropdown) => (
+                <BooleanDropdown key={dropdown} onChange={(value) => selected(value,dropdown)} position={dropdown}/>
+              ))}
             </div>
           </div>
         </div>
