@@ -91,7 +91,6 @@ function Python(props:PythonProps): JSX.Element {
         </div>
       </div>
     </div>
-
   );
 }
 
