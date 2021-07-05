@@ -46,7 +46,6 @@ function Variable(): JSX.Element {
         </div>
       </div>
     </div>
-
   );
 }
 

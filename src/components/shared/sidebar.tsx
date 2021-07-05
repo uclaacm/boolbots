@@ -27,7 +27,7 @@ function Sidebar(): JSX.Element {
           </div>
           <img id='logo' src={logo}/>
         </div>
-        <div id='desc'>
+        <div id='description'>
           {desc[pages.indexOf(current)]}
         </div>
       </div>
