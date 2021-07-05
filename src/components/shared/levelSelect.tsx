@@ -34,8 +34,8 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
   };
 
   useEffect(() => {
-    if (index > 8) {
-      setIndex(8);
+    if (index >= pageOptions.length) {
+      setIndex(pageOptions.length - 1);
     }
     if (index < 0) {
       setIndex(0);
