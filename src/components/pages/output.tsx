@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
 import robot from '../../assets/robots/robotpg7.svg';
 
-import {BooleanDropdown} from '../shared/booleanDropdown';
+import { CheckedDropdowns } from '../shared/checkedDropdowns';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
@@ -32,24 +31,6 @@ function Output(props:OutputProps): JSX.Element {
     ],
   ];
 
-  const [dropValues, setDropValues] = useState({
-    top: false,
-    middle: false,
-    bottom: false,
-  });
-
-  const selected = (value:string, pos:string) => {
-    const val = value === 'True';
-    const newDropValues = {...dropValues, [pos]: val};
-    setDropValues(newDropValues);
-  };
-
-  useEffect(() => {
-    if (dropValues.top && dropValues.middle && !dropValues.bottom) {
-      props.onCorrect();
-    }
-  },[dropValues]);
-
   return (
     <div className="frame">
       <div id="output_frame" className='robot-layout'>
@@ -58,12 +39,7 @@ function Output(props:OutputProps): JSX.Element {
             <CodeFormat code={code}/>
           </div>
           <div id="output">
-            <div id='dropdowns'>
-              {Object.keys(dropValues).map((dropdown) => (
-                <BooleanDropdown key={dropdown} onChange={(value) => selected(value,dropdown)} position={dropdown}/>
-              ))}
-            </div>
-
+            <CheckedDropdowns onCorrect={props.onCorrect} topCorrect={true} middleCorrect={true} bottomCorrect={false}/>
           </div>
         </div>
 
