@@ -1,44 +1,62 @@
+
+import {useState, useEffect} from 'react';
 import '../../styles/levelSelect.scss';
-import {useState} from 'react';
 import Dropdown, { Option } from 'react-dropdown';
-import { BsArrowUpShort, BsArrowDownShort } from 'react-icons/bs';
+import { BsCaretLeftFill , BsCaretRightFill, BsFillCaretUpFill, BsFillCaretDownFill } from 'react-icons/bs';
+import { useHistory } from 'react-router-dom';
 
+interface LevelSelectProps {
+  pageOptions: string[];
+  currentPage: string;
+}
 
-function LevelSelect(): JSX.Element {
+function LevelSelect(props:LevelSelectProps): JSX.Element {
+  const { pageOptions, currentPage } = props;
 
-  const pages = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  const [index, setIndex] = useState(pageOptions.indexOf(currentPage));
 
-  const [currentPage, setCurrentPage] = useState(6); // change this to current page once set up
+  const [reloadTime, setReloadTime] = useState(Date.now());
+
+  const history = useHistory();
 
   const createDropDownItems = ():Option[] => {
-    return pages.map((item) => {
+    return pageOptions.map((item, itemIndex) => {
       return  ({
-        label: <div>{item}</div>,
+        label: <div>{itemIndex + 1}</div>,
         value: item,
       });
     });
   };
 
-  const pageArray = createDropDownItems();
-
-  const onPageChange = (currentOption:Option):void => {
-    // add functionality here to change the current page
-    // the selected option is passed in automatically
-    setCurrentPage(parseInt(currentOption.value));
+  const onLevelChange = (newIndex:number) => {
+    setReloadTime(Date.now());
+    setIndex(newIndex);
   };
+
+  useEffect(() => {
+    if (index >= pageOptions.length) {
+      setIndex(pageOptions.length - 1);
+    }
+    if (index < 0) {
+      setIndex(0);
+    }
+    const newPage = pageOptions[index];
+    history.push(newPage);
+  }, [index]);
 
   return (
     <div className="dropdown-container">
+      <BsCaretLeftFill onClick={() => setIndex(index - 1)} className="select-arrow" size={30} />
       <Dropdown
-        options={pageArray}
+        options={createDropDownItems()}
         baseClassName="dropdown"
-        onChange={onPageChange}
-        value={pageArray[currentPage - 1]} // the page the dropdown starts off displaying
-        arrowClosed={<BsArrowUpShort/>}
-        arrowOpen={<BsArrowDownShort/>}
+        onChange={(option) => onLevelChange(pageOptions.indexOf(option.value))}
+        value={{label: <span key={reloadTime} >Level {index + 1} of 9</span>, value: pageOptions[index]}}
+        arrowClosed={<BsFillCaretUpFill size={10} />}
+        arrowOpen={<BsFillCaretDownFill size={10} />}
       />
+      <BsCaretRightFill onClick={() => setIndex(index + 1)} className="select-arrow" size={30} />
     </div>
-
   );
 
 }
