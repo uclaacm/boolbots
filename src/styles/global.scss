@@ -47,6 +47,7 @@ body {
 // Variables
 $main-background: #fff;
 $main-orange: #ff8a00;
+$main-green: #36b37e;
 $code-background: #322727;
 $main-blue: #00b8d9;
 $main-font: 'Darker Grotesque', sans-serif;
@@ -58,3 +59,77 @@ $subtitle-font-size: 36px;
 $subtitle-line-height: 91.6%;
 $rectangle-corner-radius: 8px;
 $sidebar-width: 275px;
+
+// Elements
+#code {
+  align-items: center;
+  background-color: $code-background;
+  border-radius: $rectangle-corner-radius;
+  display: flex;
+  font-family: $code-font;
+  font-size: $code-font-size;
+  padding: 0 3vw;
+}
+
+#output {
+  align-items: center;
+  background-color: $main-orange;
+  border-radius: $rectangle-corner-radius;
+  display: flex;
+  padding-left: 3vw;
+}
+
+.output-items {
+  font-family: $main-font;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+h1 {
+  align-self: center;
+  font-family: $main-font;
+  font-size: $subtitle-font-size;
+  font-weight: bold;
+  line-height: $subtitle-line-height;
+}
+
+.frame {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  padding: 5vw;
+  width: 100%;
+}
+
+.code-and-output {
+  display: grid;
+  gap: 1vw;
+  grid-template-columns: 70% auto;
+}
+
+.robots {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2vw;
+}
+
+.robot-layout {
+  display: grid;
+  grid-template-rows: 45% auto 40%;
+  height: 100%;
+  width: 100%;
+}
+
+.robot-button {
+  background: none;
+  border: 0;
+  height: 100%;
+  width: fit-content;
+}
+
+.robot-image {
+  height: 100%;
+}

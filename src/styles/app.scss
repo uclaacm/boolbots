@@ -1,11 +1,7 @@
 @import 'global';
 
-
-#contents {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  margin-left: $sidebar-width;
-  width: calc(100vw - #{$sidebar-width} - 90px);
+#app-container {
+  display: grid;
+  grid-template-columns: 22% auto;
 }
 
