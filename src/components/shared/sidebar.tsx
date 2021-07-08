@@ -31,7 +31,10 @@ function Sidebar(): JSX.Element {
           {desc[pages.indexOf(current)]}
         </div>
       </div>
-      <LevelSelect/>
+      <LevelSelect
+        pageOptions={pages}
+        currentPage={current}
+      />
     </div>
   );
 }
