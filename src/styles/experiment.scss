@@ -1,0 +1,28 @@
+@import 'global';
+
+.white {
+  color: white;
+}
+
+.orange {
+  color: $main-orange;
+}
+
+.blue {
+  color: $main-blue;
+}
+
+.green {
+  color: $main-green;
+}
+
+#problem {
+  margin-top: 3vw;
+}
+
+#python {
+  display: grid;
+  grid-template-rows: 10% auto;
+  height: 80%;
+  width: 100%;
+}

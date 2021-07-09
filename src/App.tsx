@@ -12,6 +12,7 @@ import Advanced from './components/pages/advanced';
 import Boolean from './components/pages/booleanop';
 import Comparison from './components/pages/comparison';
 import Equal from './components/pages/equal';
+import Experiment from './components/pages/experiment';
 import Landing from './components/pages/landing';
 import Output from './components/pages/output';
 import Python from './components/pages/python';
@@ -34,6 +35,7 @@ function App(): JSX.Element {
             <Route path="/comparison"> <Comparison/> </Route>
             <Route path="/boolean"> <Boolean/> </Route>
             <Route path="/advanced"> <Advanced/> </Route>
+            <Route path="/experiment"> <Experiment/> </Route>
             <Route path="/output"> <Output onCorrect={() => setEnabled(true)}/> </Route>
             <Route path="/python"> <Python onCorrect={() => setEnabled(true)}/> </Route>
           </Switch>
