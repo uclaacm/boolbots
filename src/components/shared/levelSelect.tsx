@@ -8,10 +8,11 @@ import { useHistory } from 'react-router-dom';
 interface LevelSelectProps {
   pageOptions: string[];
   currentPage: string;
+  highestPage: number;
 }
 
 function LevelSelect(props:LevelSelectProps): JSX.Element {
-  const { pageOptions, currentPage } = props;
+  const { pageOptions, currentPage, highestPage } = props;
 
   const [index, setIndex] = useState(pageOptions.indexOf(currentPage));
 
@@ -20,7 +21,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
   const history = useHistory();
 
   const createDropDownItems = ():Option[] => {
-    return pageOptions.map((item, itemIndex) => {
+    return pageOptions.slice(0, highestPage).map((item, itemIndex) => {
       return  ({
         label: <div>{itemIndex + 1}</div>,
         value: item,
@@ -55,7 +56,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
         arrowClosed={<BsFillCaretUpFill size={10} />}
         arrowOpen={<BsFillCaretDownFill size={10} />}
       />
-      <BsCaretRightFill onClick={() => setIndex(index + 1)} className="select-arrow" size={30} />
+      { pageOptions.indexOf(currentPage) + 1 < highestPage && <BsCaretRightFill onClick={() => setIndex(index + 1)} className="select-arrow" size={30} /> }
     </div>
   );
 

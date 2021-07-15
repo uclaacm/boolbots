@@ -34,6 +34,7 @@ function Sidebar(): JSX.Element {
       <LevelSelect
         pageOptions={pages}
         currentPage={current}
+        highestPage={5}
       />
     </div>
   );
