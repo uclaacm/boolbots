@@ -5,7 +5,11 @@ import robot4 from '../../assets/robots/pg5/robot4pg5.svg';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
-function Boolean(): JSX.Element {
+interface BooleanProps {
+  onCorrect: () => void;
+}
+
+function Boolean(props:BooleanProps): JSX.Element {
 
   const code: lineOfCode[] = [
     [
@@ -52,7 +56,7 @@ function Boolean(): JSX.Element {
 
         <h1>Select the matching robot:</h1>
         <div className="robots">
-          <button className="robot-button">
+          <button className="robot-button" onClick={props.onCorrect}>
             <img className="robot-image" src={robot1} alt="green robot, circle head, no mouth, 0 antenna, 2 arms, 1 button"></img>
           </button>
           <button className="robot-button">
