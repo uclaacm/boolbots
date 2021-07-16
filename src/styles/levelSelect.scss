@@ -1,6 +1,5 @@
 @import 'global';
 
-$level-select-hover: #adadad;
 $level-select-background: rgba($color: #fff, $alpha: 0.7);
 
 .dropdown-container {
@@ -31,7 +30,7 @@ $level-select-background: rgba($color: #fff, $alpha: 0.7);
 }
   
 .dropdown-control:hover {
-  background-color: $level-select-hover;
+  background-color: $hover-color;
   cursor: pointer;
 }
   
@@ -43,7 +42,7 @@ $level-select-background: rgba($color: #fff, $alpha: 0.7);
 }
   
 .dropdown-option:hover {
-  background-color: $level-select-hover;
+  background-color: $hover-color;
   cursor: pointer;
 }
   
@@ -72,7 +71,7 @@ $level-select-background: rgba($color: #fff, $alpha: 0.7);
 }
 
 .select-arrow:hover {
-  color: $level-select-hover;
+  color: $hover-color;
   cursor: pointer;
 }
 
