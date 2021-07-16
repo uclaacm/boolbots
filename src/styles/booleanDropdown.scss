@@ -33,16 +33,13 @@
   background-color: $dropdown-open;
 }
 
-.arrow-closed {
+.arrow {
   background: url('../assets/arrow.svg') no-repeat right;
   display: inline-block;
   padding: 4px;
 }
 
-.arrow-open {
-  background: url('../assets/arrow.svg') no-repeat right;
-  display: inline-block;
-  padding: 4px;
+.flipped {
   transform: scaleY(-1);
 }
 
