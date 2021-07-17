@@ -11,7 +11,7 @@ interface LevelSelectProps {
   highestPage: number;
 }
 
-function LevelSelect(props:LevelSelectProps): JSX.Element {
+function LevelSelect(props:LevelSelectProps): JSX.Element | null {
   const { pageOptions, currentPage, highestPage } = props;
 
   const [index, setIndex] = useState(pageOptions.indexOf(currentPage));
@@ -45,20 +45,24 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
     history.push(newPage);
   }, [index]);
 
-  return (
-    <div className="dropdown-container">
-      <BsCaretLeftFill onClick={() => setIndex(index - 1)} className="select-arrow" size={30} />
-      <Dropdown
-        options={createDropDownItems()}
-        baseClassName="dropdown"
-        onChange={(option) => onLevelChange(pageOptions.indexOf(option.value))}
-        value={{label: <span key={reloadTime} >Level {index + 1} of 9</span>, value: pageOptions[index]}}
-        arrowClosed={<BsFillCaretUpFill size={10} />}
-        arrowOpen={<BsFillCaretDownFill size={10} />}
-      />
-      { pageOptions.indexOf(currentPage) + 1 < highestPage && <BsCaretRightFill onClick={() => setIndex(index + 1)} className="select-arrow" size={30} /> }
-    </div>
-  );
+  if (highestPage > 1) {
+    return (
+      <div className="dropdown-container">
+        {pageOptions.indexOf(currentPage) > 0 && <BsCaretLeftFill onClick={() => setIndex(index - 1)} className="select-arrow" size={30} /> }
+        <Dropdown
+          options={createDropDownItems()}
+          baseClassName="dropdown"
+          onChange={(option) => onLevelChange(pageOptions.indexOf(option.value))}
+          value={{label: <span key={reloadTime} >Level {index + 1} of 9</span>, value: pageOptions[index]}}
+          arrowClosed={<BsFillCaretUpFill size={10} />}
+          arrowOpen={<BsFillCaretDownFill size={10} />}
+        />
+        { pageOptions.indexOf(currentPage) + 1 < highestPage && <BsCaretRightFill onClick={() => setIndex(index + 1)} className="select-arrow" size={30} /> }
+      </div>
+    );
+  } else {
+    return null;
+  }
 
 }
 export default LevelSelect;
