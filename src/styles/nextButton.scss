@@ -1,23 +1,30 @@
 @import 'global';
 
-.nextButton {
+#next-button-container {
   background-color: $main-orange;
-  border: 0;
   border-radius: 20px;
-  bottom: 30px;
-  color: black;
+  bottom: 20px;
   cursor: default;
+  opacity: 50%;
+  padding: 10px 20px;
+  position: absolute;
+  right: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #next-button-container {
+    right: calc(50% - 45px);
+  }
+}
+
+.nextButton {
+  background-color: transparent;
+  border: 0;
+  color: black;
   font-family: $main-font;
   font-size: 24px;
-  height: 37px;
-  line-height: 23px;
-  opacity: 50%;
-  padding: 5px 20px;
-  position: absolute;
-  right: 30px;
-  text-align: center;
+  line-height: 10px;
   text-decoration: none;
-  width: 85px;
 }
 
 .enabled {

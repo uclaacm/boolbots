@@ -2,17 +2,21 @@
 
 #sidebar {
   background-color: $main-orange;
+
   display: flex;
   flex-direction: column;
   font-family: $main-font;
+  gap: 5vw;
   justify-content: space-between;
-  padding: 2.2vw;
+
+  padding: max(30px, 2.2vw);
 }
 
 #header {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  margin-bottom: 1.5vw;
   width: inherit;
 }
 

@@ -21,7 +21,7 @@ function NextButton(props:NextButtonProps): JSX.Element {
     return (<div></div>);
   } else {
     return (
-      <Link to={nextPage}>
+      <Link id="next-button-container" to={nextPage}>
         <button className= {`nextButton ${props.isEnabled ?' enabled':''}`} disabled={!props.isEnabled} onClick={props.onClick}>
           next
         </button>

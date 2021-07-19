@@ -21,9 +21,8 @@
 }
 
 #python {
-  display: grid;
-  grid-template-rows: 10% auto;
-  height: 80%;
+  box-sizing: border-box;
+  padding: max(30px, 5vw);
   width: 100%;
 }
 
