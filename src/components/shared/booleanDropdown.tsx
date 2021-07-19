@@ -13,5 +13,5 @@ export function BooleanDropdown(props:BooleanDropdownProps):JSX.Element  {
     <div className='dropWrapper'>
       <Dropdown className={'drop '+props.position} options={options} value='False' arrowClassName='arrow' onChange={(option) => props.onChange(option.value)}/>
     </div>
-)}
+  );}
 
