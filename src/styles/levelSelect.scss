@@ -89,6 +89,7 @@ $level-select-background: rgba($color: #fff, $alpha: 0.7);
   grid-template-rows: 1fr auto;
   justify-items: center;
   width: fit-content;
+  height: 100px;
 }
 
 .dropdown-root {
@@ -167,7 +168,7 @@ $level-select-background: rgba($color: #fff, $alpha: 0.7);
   color: white;
   grid-column: 1;
   grid-row: 2;
-  margin-bottom: 0.15em;
+  margin-bottom: 0.4em;
   z-index: 1;
 }
 
