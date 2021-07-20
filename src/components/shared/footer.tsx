@@ -1,5 +1,5 @@
 import '../../styles/footer.scss';
-import TeachLALogo from '../../assets/teachLaLogo.svg';
+import TeachLALogo from '../../assets/teachLALogo.svg';
 
 function Footer(): JSX.Element {
   return (
