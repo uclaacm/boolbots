@@ -1,11 +1,22 @@
 import '../../styles/footer.scss';
-import FooterTxt from '../../assets/FooterTxt.svg';
+import TeachLALogo from '../../assets/teachLaLogo.svg';
 
 function Footer(): JSX.Element {
   return (
     <div id="footer">
       <h3>
-        <a href="https://teachla.uclaacm.com" target="_blank" rel="noopener noreferrer"><img id="tla-logo" src={FooterTxt} alt="Made with ❤️ by acm.teachLA"/></a>
+      made with ❤️ by
+        {' '}
+        <a
+          href="https://teachla.uclaacm.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="footer-link"
+        >
+          {' '}
+          <img id="tla-logo" src={TeachLALogo} alt="teach la logo!" />
+          acm.teachLA
+        </a>
       </h3>
     </div>
   );

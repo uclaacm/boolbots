@@ -4,15 +4,26 @@ h3 {
 }
 
 #footer {
+  align-items: center;
   bottom: 1.3vw;
+  display: flex;
+  font-family: 'Westwood Sans','Helvetica Neue', 'Helvetica', sans-serif;
   height: 1.35vw;
+  justify-content: center;
   left: 50%;
   margin-top: 0;
   position: absolute;
-  width: 20vw;
+  width: 22vw;
+  
 }
 
 #tla-logo {
-  height: 1.55em;
-  vertical-align: -0.55em;
+  height: 1.66em;
+  vertical-align: -0.5em;
+}
+
+#footer-link {
+  color: black;
+  font-family: 'Westwood Sans','Helvetica Neue', 'Helvetica', sans-serif;
+  text-decoration: none;
 }
