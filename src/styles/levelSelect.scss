@@ -87,7 +87,7 @@ $level-select-background: rgba($color: #fff, $alpha: 0.7);
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 1fr auto;
-  height: 100px;
+  height: 150px;
   justify-items: center;
   width: fit-content;
 }
@@ -96,7 +96,7 @@ $level-select-background: rgba($color: #fff, $alpha: 0.7);
   background: transparent;
   display: grid;
   font-family: $main-font;
-  font-size: 18px;
+  font-size: $sidebar-font-size;
   grid-column: 1;
   grid-row: 1 / 3;
   grid-template-rows: subgrid;
@@ -179,8 +179,10 @@ $level-select-background: rgba($color: #fff, $alpha: 0.7);
 
 .left-arrow {
   justify-self: left;
+  margin-left: 5px;
 }
 
 .right-arrow {
   justify-self: right;
+  margin-right: 5px;
 }
