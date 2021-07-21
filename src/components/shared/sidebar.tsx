@@ -20,7 +20,7 @@ function Sidebar(): JSX.Element {
   const current = location.pathname;
   return (
     <div id="sidebar">
-      <div>
+      <div id="header-and-description">
         <div id='header'>
           <div id='title'>
             BoolBots

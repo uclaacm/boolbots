@@ -2,23 +2,26 @@
 
 #sidebar {
   background-color: $main-orange;
+
   display: flex;
   flex-direction: column;
   font-family: $main-font;
   justify-content: space-between;
-  padding: 2.2vw;
+
+  padding: max(30px, 2.2vw);
 }
 
 #header {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  margin-bottom: 1.5vw;
   width: inherit;
 }
 
 #title {
   color: white;
-  font-size: 36px;
+  font-size: $title-font-size;
   font-style: normal;
   font-weight: 500;
 }
