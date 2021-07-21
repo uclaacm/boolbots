@@ -5,7 +5,11 @@ import robot4 from '../../assets/robots/pg2/robot4pg2.svg';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
-function Variable(): JSX.Element {
+interface VariableProps {
+  onCorrect: () => void;
+}
+
+function Variable(props:VariableProps): JSX.Element {
 
   const code: lineOfCode[] = [
     [
@@ -31,7 +35,7 @@ function Variable(): JSX.Element {
         </div>
         <h1>Select the matching robot:</h1>
         <div className="robots">
-          <button className="robot-button">
+          <button className="robot-button" onClick={props.onCorrect}>
             <img className="robot-image" src={robot1} alt="blue robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
           </button>
           <button className="robot-button">

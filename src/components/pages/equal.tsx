@@ -8,7 +8,11 @@ import robot4 from '../../assets/robots/pg3/robot4pg3.svg';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
-function Equal(): JSX.Element {
+interface EqualProps {
+  onCorrect: () => void;
+}
+
+function Equal(props:EqualProps): JSX.Element {
 
   const code: lineOfCode[] = [
     [
@@ -64,7 +68,7 @@ function Equal(): JSX.Element {
           <button className="robot-button">
             <img className="robot-image" src={robot3} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
           </button>
-          <button className="robot-button">
+          <button className="robot-button" onClick={props.onCorrect}>
             <img className="robot-image" src={robot4} alt="green robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
           </button>
         </div>

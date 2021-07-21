@@ -5,7 +5,11 @@ import robot4 from '../../assets/robots/pg6/robot4pg6.svg';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
-function Advanced(): JSX.Element {
+interface AdvancedProps {
+  onCorrect: () => void;
+}
+
+function Advanced(props:AdvancedProps): JSX.Element {
 
   const code: lineOfCode[] = [
     [
@@ -64,7 +68,7 @@ function Advanced(): JSX.Element {
           <button className="robot-button">
             <img src={robot2} alt="red robot, square head, with mouth, 1 antenna, 0 arms, 1 button"></img>
           </button>
-          <button className="robot-button">
+          <button className="robot-button" onClick={props.onCorrect}>
             <img src={robot3} alt="blue robot, triangle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
           </button>
           <button className="robot-button">

@@ -5,7 +5,11 @@ import robot4 from '../../assets/robots/pg1/robot4pg1.svg';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
-function Landing(): JSX.Element {
+interface LandingProps {
+  onCorrect: () => void;
+}
+
+function Landing(props:LandingProps): JSX.Element {
 
   const code: lineOfCode[] = [
     [
@@ -33,7 +37,7 @@ function Landing(): JSX.Element {
           <button className="robot-button">
             <img className="robot-image" src={robot2} alt="red robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
           </button>
-          <button className="robot-button">
+          <button className="robot-button" onClick={props.onCorrect}>
             <img className="robot-image" src={robot3} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
           </button>
           <button className="robot-button">
