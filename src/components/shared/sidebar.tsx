@@ -3,7 +3,12 @@ import logo from '../../assets/logo.svg';
 import LevelSelect from './levelSelect';
 import '../../styles/sidebar.scss';
 
-function Sidebar(): JSX.Element {
+interface SidebarProps {
+  isCompleted: boolean;
+}
+
+function Sidebar(props: SidebarProps): JSX.Element {
+
   const pages = ['/','/variable','/equal','/comparison','/boolean','/advanced','/output','/python','/experiment'];
   const desc = [
     'Welcome to BoolBots! We will be going over what a boolean is in Python. A boolean is a data type that can take one of two values. Usually these values are True or False. We use booleans if we want to represent something with two distinct states.',
@@ -18,6 +23,9 @@ function Sidebar(): JSX.Element {
   ];
   const location = useLocation();
   const current = location.pathname;
+
+  const { isCompleted } = props;
+
   return (
     <div id="sidebar">
       <div>
@@ -34,7 +42,7 @@ function Sidebar(): JSX.Element {
       <LevelSelect
         pageOptions={pages}
         currentPage={current}
-        highestPage={5}
+        isCompleted={isCompleted}
       />
     </div>
   );
