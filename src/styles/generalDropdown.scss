@@ -42,6 +42,7 @@
 
 .Dropdown-option {
   box-sizing: border-box;
+  margin-top: -1px;
   padding: 3px;
   padding-bottom: 5px;
   padding-left: 10px;
@@ -49,12 +50,12 @@
 
 .Dropdown-menu {
   border-top: 1px solid $light-orange;
-  margin-top: 5px;
+  // margin-top: 5px;
 }
 
-.Dropdown-option:hover {
-  background-color: $light-orange;
-}
+// .Dropdown-option:hover {
+//   background-color: $light-orange;
+// }
 
 
 .arrow {
@@ -79,9 +80,9 @@
   min-width: 60px;
 }
 
-.Dropdown-control:hover {
-  background-color: $hover-color;
-}
+// .Dropdown-control:hover {
+//   background-color: $light-orange;
+// }
 
 .Dropdown-placeholder.is-selected { //Dropdown selected option
   flex-grow: 1;
@@ -93,7 +94,7 @@
 }
 
 .option:hover {
-  background-color: $hover-color;
+  background-color: $light-orange;
 }
 
 .last {

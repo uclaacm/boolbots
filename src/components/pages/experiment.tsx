@@ -118,7 +118,7 @@ function Experiment(): JSX.Element {
         <h1>Your turn to try!</h1>
         <div id='problem' className='code-and-output'>
           <div id='code'>
-            <div>
+            <div id="experiment-code">
               <div className='line'>
                 <CodeFormat code={code}/>
                 <input className='input + num' placeholder='0' type='number' onChange={(val) => setAntennas(Number(val.target.value))}/>
