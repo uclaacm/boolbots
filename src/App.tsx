@@ -25,7 +25,7 @@ function App(): JSX.Element {
   return (
     <Router>
       <div id="app-container">
-        <Sidebar isCompleted={enabled} />
+        <Sidebar isCompleted={enabled} disableNextButton={() => setEnabled(false)} />
         <div id = "contents">
           <Switch>
             <Route exact path="/"> <Landing onCorrect={() => setEnabled(true)}/> </Route>

@@ -5,6 +5,7 @@ import '../../styles/sidebar.scss';
 
 interface SidebarProps {
   isCompleted: boolean;
+  disableNextButton: () => void;
 }
 
 function Sidebar(props: SidebarProps): JSX.Element {
@@ -24,7 +25,7 @@ function Sidebar(props: SidebarProps): JSX.Element {
   const location = useLocation();
   const current = location.pathname;
 
-  const { isCompleted } = props;
+  const { isCompleted, disableNextButton } = props;
 
   return (
     <div id="sidebar">
@@ -43,6 +44,7 @@ function Sidebar(props: SidebarProps): JSX.Element {
         pageOptions={pages}
         currentPage={current}
         isCompleted={isCompleted}
+        disableNextButton={disableNextButton}
       />
     </div>
   );
