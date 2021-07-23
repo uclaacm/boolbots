@@ -75,40 +75,14 @@
   width: 4px;
 }
 
-.flipped {
-  transform: scaleY(-1);
-}
-
 .Dropdown-arrow-wrapper {
   padding: 0 7px;
 }
 
 .Dropdown-control {
-  border-radius: 3px;
   display: flex;
-  min-height: 27px;
-  min-width: 60px;
-  padding-left: 10px;
-}
-
-.Dropdown-control:hover {
-  background-color: $hover-color;
 }
 
 .Dropdown-placeholder.is-selected { //Dropdown selected option
   flex-grow: 1;
-}
-
-.option {
-  background-color: $dropdown-open;
-  min-width: 60px;
-  padding-left: 10px;
-}
-
-.option:hover {
-  background-color: $hover-color;
-}
-
-.second {
-  border-radius: 0 0 3px 3px;
 }
