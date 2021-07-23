@@ -28,12 +28,12 @@ function App(): JSX.Element {
         <Sidebar/>
         <div id = "contents">
           <Switch>
-            <Route exact path="/"> <Landing/> </Route>
-            <Route path="/variable"> <Variable/> </Route>
-            <Route path="/equal"> <Equal/> </Route>
-            <Route path="/comparison"> <Comparison/> </Route>
-            <Route path="/boolean"> <Boolean/> </Route>
-            <Route path="/advanced"> <Advanced/> </Route>
+            <Route exact path="/"> <Landing onCorrect={() => setEnabled(true)}/> </Route>
+            <Route path="/variable"> <Variable onCorrect={() => setEnabled(true)}/> </Route>
+            <Route path="/equal"> <Equal onCorrect={() => setEnabled(true)}/> </Route>
+            <Route path="/comparison"> <Comparison onCorrect={() => setEnabled(true)}/> </Route>
+            <Route path="/boolean"> <Boolean onCorrect={() => setEnabled(true)}/> </Route>
+            <Route path="/advanced"> <Advanced onCorrect={() => setEnabled(true)}/> </Route>
             <Route path="/output"> <Output onCorrect={() => setEnabled(true)}/> </Route>
             <Route path="/python"> <Python onCorrect={() => setEnabled(true)}/> </Route>
           </Switch>
