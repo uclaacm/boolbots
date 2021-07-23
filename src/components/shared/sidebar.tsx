@@ -29,7 +29,7 @@ function Sidebar(props: SidebarProps): JSX.Element {
 
   return (
     <div id="sidebar">
-      <div>
+      <div id="header-and-description">
         <div id='header'>
           <div id='title'>
             BoolBots

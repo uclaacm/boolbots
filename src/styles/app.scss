@@ -3,5 +3,19 @@
 #app-container {
   display: grid;
   grid-template-columns: 22% auto;
+  height: fit-content;
+  min-height: 100vh;
 }
 
+@media only screen and (max-width: 1000px) {
+  #app-container {
+    display: inherit;
+    height: fit-content;
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+}
+
+#root {
+  position: relative;
+}
