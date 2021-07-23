@@ -46,7 +46,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
 
   return (
     <div className="dropdown-container">
-      <BsCaretLeftFill onClick={() => setIndex(index - 1)} className="select-arrow" size={30} />
+      <BsCaretLeftFill onClick={() => setIndex(index - 1)} className="select-arrow left-arrow" size={20} />
       <Dropdown
         options={createDropDownItems()}
         baseClassName="dropdown"
@@ -55,7 +55,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element {
         arrowClosed={<BsFillCaretUpFill size={10} />}
         arrowOpen={<BsFillCaretDownFill size={10} />}
       />
-      <BsCaretRightFill onClick={() => setIndex(index + 1)} className="select-arrow" size={30} />
+      <BsCaretRightFill onClick={() => setIndex(index + 1)} className="select-arrow right-arrow" size={20} />
     </div>
   );
 

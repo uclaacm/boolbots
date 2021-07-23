@@ -12,11 +12,13 @@ interface BooleanDropdownProps {
 }
 
 export function BooleanDropdown(props:BooleanDropdownProps):JSX.Element  {
-  return <Dropdown
-    className={'drop '+props.position}
-    options={options}
-    value='False'
-    arrowClosed={<div className='arrow'/>}
-    arrowOpen={<div className='arrow flipped'/>}
-    onChange={(option) => props.onChange(option.value)}/>;
-}
+  return(
+    <div className='dropWrapper'>
+      <Dropdown className={'drop '+props.position}
+        options={options}
+        value='False'
+        arrowClassName='arrow'
+        onChange={(option) => props.onChange(option.value)}/>
+    </div>
+  );}
+
