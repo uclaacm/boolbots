@@ -68,7 +68,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element | null {
     localStorage.setItem('highestPage', highestPage.toString());
     return (
       <div className="dropdown-container">
-        {pageOptions.indexOf(currentPage) > 0 && <BsCaretLeftFill onClick={() => setIndex(index - 1)} className="select-arrow" size={30} />}
+        {pageOptions.indexOf(currentPage) > 0 && <BsCaretLeftFill onClick={() => setIndex(index - 1)} className="select-arrow left-arrow" size={20} />}
         <Dropdown
           options={createDropDownItems()}
           baseClassName="dropdown"
@@ -78,7 +78,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element | null {
           arrowClosed={<BsFillCaretUpFill size={10} />}
           arrowOpen={<BsFillCaretDownFill size={10} />}
         />
-        {pageOptions.indexOf(currentPage) < highestPage && <BsCaretRightFill onClick={() => setIndex(index + 1)} className="select-arrow" size={30} />}
+        {pageOptions.indexOf(currentPage) < highestPage && <BsCaretRightFill onClick={() => setIndex(index + 1)} className="select-arrow right-arrow" size={20} />}
       </div>
     );
   } else {
