@@ -1,28 +1,48 @@
 @import 'global';
 
-.white {
-  color: white;
-}
-
-.orange {
-  color: $main-orange;
-}
-
-.blue {
-  color: $main-blue;
-}
-
-.green {
-  color: $main-green;
-}
-
 #problem {
   margin-top: 3vw;
 }
 
-#python {
-  display: grid;
-  grid-template-rows: 10% auto;
-  height: 80%;
+#experiment {
+  box-sizing: border-box;
+  padding: max(30px, 5vw);
   width: 100%;
+}
+
+.line {
+  align-items: center;
+  display: flex;
+}
+
+.input {
+  border: 0;
+  border-radius: 5px;
+  font-family: $main-font;
+  font-size: 18px;
+  height: 27px;
+  margin: 2px 0;
+  text-align: center;
+}
+
+.num {
+  margin-left: 0.7vw;
+  margin-right: 0.7vw;
+  width: 2vw;
+}
+
+.string {
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  width: 8vw;
+}
+
+//remove increment buttons in number inputs
+input[type=number]::-webkit-inner-spin-button,
+ 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; 
 }
