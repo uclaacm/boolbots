@@ -32,7 +32,7 @@
   z-index: 1;
 }
 
-.is-open {
+.dropWrapper .is-open {
   // background-color: $light-orange;
   -webkit-box-shadow: 5px 5px 18px -4px rgba(48, 35, 14, 0.17);
   box-shadow: 5px 5px 18px -4px rgba(48, 35, 14, 0.17);
@@ -51,6 +51,7 @@
 
 .Dropdown-option {
   box-sizing: border-box;
+  margin-top: -1px;
   padding: 3px;
   padding-bottom: 5px;
   padding-left: 10px;

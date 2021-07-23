@@ -2,12 +2,12 @@
 
 #sidebar {
   background-color: $main-orange;
-
   display: flex;
   flex-direction: column;
   font-family: $main-font;
+  font-size: $sidebar-font-size;
+  font-weight: 700;
   justify-content: space-between;
-
   padding: max(30px, 2.2vw);
 }
 
