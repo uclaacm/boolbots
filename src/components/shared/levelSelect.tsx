@@ -19,7 +19,6 @@ function LevelSelect(props:LevelSelectProps): JSX.Element | null {
 
   const [highestPage, setHighestPage] = useState(-1);
 
-
   const [reloadTime, setReloadTime] = useState(Date.now());
 
   const history = useHistory();
@@ -43,13 +42,6 @@ function LevelSelect(props:LevelSelectProps): JSX.Element | null {
     setHighestPage(num || -1);
   }, []);
 
-
-  /*
-  Issue with the following useEffect -> when you have already completed a page above the current page
-  completing the current level will cause the level above it to become the next level?
-
-
-  */
   useEffect(() => {
     if (isCompleted && pageOptions.indexOf(currentPage) >= highestPage) {
       setHighestPage(pageOptions.indexOf(currentPage) + 1);
