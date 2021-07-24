@@ -10,14 +10,12 @@ interface GeneralDropdownProps {
 }
 
 export function GeneralDropdown(props:GeneralDropdownProps):JSX.Element  {
-  const options: {value:string, label:string, className:string}[] = [];
-  props.options.map((option) => {
-    if (option != props.options[props.options.length-1]) {
-      options.push({value: option, label: option, className: 'option'});
+  const options: {value:string, label:string, className:string}[] = props.options.map((option) => {
+    const opt = {value: option, label: option, className: 'option'};
+    if (option === props.options[props.options.length-1]) {
+      opt.className = 'option last';
     }
-    else {
-      options.push({value: option, label: option, className: 'option last'});
-    }
+    return opt;
   });
 
   return (
