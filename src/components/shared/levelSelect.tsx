@@ -51,7 +51,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element | null {
   }, [isCompleted]);
 
   useEffect(() => {
-    if (index == highestPage) {
+    if (index === highestPage) {
       disableNextButton();
     }
     if (index >= pageOptions.length) {
@@ -64,7 +64,7 @@ function LevelSelect(props:LevelSelectProps): JSX.Element | null {
     history.push(newPage);
   }, [index]);
 
-  if (highestPage != -1) {
+  if (highestPage !== -1) {
     localStorage.setItem('highestPage', highestPage.toString());
     return (
       <div className="dropdown-container">
