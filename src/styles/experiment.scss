@@ -1,0 +1,52 @@
+@import 'global';
+
+#experiment {
+  box-sizing: border-box;
+  padding: 0 max(30px, 5vw);
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  #experiment {
+    padding: max(30px, 5vw);
+  }
+}
+
+.line {
+  align-items: center;
+  border: solid 3px transparent;
+  display: flex;
+  flex-flow: row wrap;
+  padding-top: 1vw 0;
+}
+
+.input {
+  border: 0;
+  border-radius: 3px;
+  font-family: $main-font;
+  font-size: 18px;
+  padding-bottom: 4px;
+  text-align: center;
+}
+
+.num {
+  margin-left: 0.7vw;
+  margin-right: 0.7vw;
+  width: 30px;
+}
+
+.string {
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  width: 120px;
+}
+
+//remove increment buttons in number inputs
+input[type=number]::-webkit-inner-spin-button,
+ 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
