@@ -56,7 +56,7 @@ $code-font: 'Roboto Mono', monospace;
 
 $code-font-size: calc(12px + 0.5vw);
 $output-font-size: calc(17px + 0.5vw);
-$sidebar-font-size: calc(18px);
+$sidebar-font-size: 18px;
 $subtitle-font-size: calc(20px + 1.5vw);
 $title-font-size: calc(20px + 1.5vw);
 
@@ -81,8 +81,6 @@ $sidebar-width: 275px;
   display: grid;
   gap: max(1vw, 15px);
 }
-
-
 
 #code {
   align-items: center;
@@ -177,59 +175,3 @@ h1 {
   height: 100%;
   //  width: 100%;
 }
-
-// .frame {
-//   align-items: center;
-//   box-sizing: border-box;
-//   display: flex;
-//   // min-height: 100vh;
-//   height: 100%;
-//   // height: fit-content;
-//   justify-content: center;
-//   padding: 5vw;
-//   // width: 100%;
-
-//   background-color: lime;
-// }
-
-// .code-and-output {
-//   display: grid;
-//   gap: 1vw;
-//   grid-template-columns: 70% auto;
-// }
-
-// // Robots
-
-// .robots {
-//   display: flex;
-//   flex-flow: row wrap;
-//   justify-content: space-evenly;
-//   // padding: 2vw;
-//   gap: max(25px,2vw);
-//   // height: 100%;
-//   height: fit-content;
-//   // box-sizing: border-box;
-//   // background-color: mediumblue;
-
-// }
-
-// .robot-layout {
-//   display: grid;
-//   grid-template-rows: 45% auto 40%;
-//   height: 100%;
-//   // height: fit-content;
-//   // width: 100%;
-//   background-color: mediumvioletred;
-// }
-
-// .robot-button {
-//   background: none;
-//   border: 0;
-//   height: 100%;
-//   width: fit-content;
-// }
-
-// .robot-image {
-//   height: 100%;
-//   max-height: 250px;
-// }

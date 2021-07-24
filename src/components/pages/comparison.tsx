@@ -5,7 +5,11 @@ import robot4 from '../../assets/robots/pg4/robot4pg4.svg';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
-function Comparison(): JSX.Element {
+interface ComparisonProps {
+  onCorrect: () => void;
+}
+
+function Comparison(props:ComparisonProps): JSX.Element {
 
   const code: lineOfCode[] = [
     [
@@ -59,7 +63,7 @@ function Comparison(): JSX.Element {
           <button className="robot-button">
             <img className="robot-image" src={robot3} alt="red robot, circle head, no mouth, 2 antenna, 2 arms, 2 buttons"></img>
           </button>
-          <button className="robot-button">
+          <button className="robot-button" onClick={props.onCorrect}>
             <img className="robot-image" src={robot4} alt="blue robot, circle head, no mouth, 1 antenna, 0 arms, 2 buttons"></img>
           </button>
         </div>
