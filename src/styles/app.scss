@@ -1,11 +1,21 @@
 @import 'global';
 
-
-#contents {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  margin-left: $sidebar-width;
-  width: calc(100vw - #{$sidebar-width} - 90px);
+#app-container {
+  display: grid;
+  grid-template-columns: 22% auto;
+  height: fit-content;
+  min-height: 100vh;
 }
 
+@media only screen and (max-width: 1000px) {
+  #app-container {
+    display: inherit;
+    height: fit-content;
+    min-height: 100vh;
+    padding-bottom: 50px;
+  }
+}
+
+#root {
+  position: relative;
+}

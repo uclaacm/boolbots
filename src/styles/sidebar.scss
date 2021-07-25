@@ -2,44 +2,31 @@
 
 #sidebar {
   background-color: $main-orange;
-  display: inline-block;
+
+  display: flex;
   flex-direction: column;
   font-family: $main-font;
-  height: 100vh;
-  padding-left: 10px;
-  position: absolute;
-  width: $sidebar-width;
+  font-size: $sidebar-font-size;
+  font-weight: 700;
+  justify-content: space-between;
+  padding: max(30px, 2.2vw);
 }
 
 #header {
   display: flex;
-  flex-direction: row;
-  height: 10vh;
-  padding-top: 20px;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 1.5vw;
   width: inherit;
 }
 
 #title {
   color: white;
-  font-size: 36px;
+  font-size: $title-font-size;
   font-style: normal;
   font-weight: 500;
-  line-height: 33px;
-  padding-left: 15px;
-  padding-right: 35px;
-  padding-top: 15px;
-  position: relative;
 }
 
 #logo {
-  left: 5px;
-  position: relative;
-  top: 5px;
   width: 65px;
-}
-
-#desc {
-  font-size: 18px;
-  padding-left: 15px;
-  padding-right: 15px;
 }

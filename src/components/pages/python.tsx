@@ -1,6 +1,5 @@
-import { useState, useEffect} from 'react';
 import '../../styles/python.scss';
-import {BooleanDropdown} from '../shared/booleanDropdown';
+import { CheckedDropdowns } from '../shared/checkedDropdowns';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
 
@@ -29,7 +28,7 @@ function Python(props:PythonProps): JSX.Element {
     [
       { ['color']: Color.White },
       { [' = ']: Color.Orange },
-      { ['"white"']: Color.Blue },
+      { ['"white"']: Color.Green },
     ],
     [],
     [
@@ -50,41 +49,20 @@ function Python(props:PythonProps): JSX.Element {
       { ['print']: Color.Orange },
       { ['(color']: Color.White },
       { [' != ']: Color.Orange },
-      { ['"red"']: Color.Blue},
+      { ['"red"']: Color.Green},
       { [')']: Color.White},
     ],
   ];
-
-  const [dropValues, setDropValues] = useState({
-    top: false,
-    middle: false,
-    bottom: false,
-  });
-
-  const selected = (value:string, pos:string) => {
-    const val = value === 'True';
-    const newDropValues = {...dropValues, [pos]: val};
-    setDropValues(newDropValues);
-  };
-
-  useEffect(() => {
-    if (dropValues.top && dropValues.middle && !dropValues.bottom) {
-      props.onCorrect();
-    }
-  },[dropValues]);
-
   return (
-    <div id='python'>
-      <h1>Match the output to the code:</h1>
-      <div id='problem'>
-        <div id='code'>
-          <CodeFormat code={code}/>
-        </div>
-        <div id='output'>
-          <div id='dropdowns'>
-            {Object.keys(dropValues).map((dropdown) => (
-              <BooleanDropdown key={dropdown} onChange={(value) => selected(value,dropdown)} position={dropdown}/>
-            ))}
+    <div className='frame'>
+      <div id='python'>
+        <h1>Match the output to the code:</h1>
+        <div id='problem' className='code-and-output'>
+          <div id='code'>
+            <CodeFormat code={code}/>
+          </div>
+          <div id='output'>
+            <CheckedDropdowns onCorrect={props.onCorrect} topCorrect={true} middleCorrect={true} bottomCorrect={false}/>
           </div>
         </div>
       </div>
