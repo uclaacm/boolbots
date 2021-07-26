@@ -2,7 +2,6 @@
 
 #sidebar {
   background-color: $main-orange;
-
   display: flex;
   flex-direction: column;
   font-family: $main-font;
@@ -15,8 +14,7 @@
 #header {
   display: flex;
   flex-flow: row wrap;
-  // justify-content: space-between;
-  gap: 1vw;
+  gap: 10px;
   margin-bottom: 1.5vw;
   width: inherit;
 }
@@ -29,5 +27,5 @@
 }
 
 #logo {
-  width: 40px;
+  width: 35px;
 }

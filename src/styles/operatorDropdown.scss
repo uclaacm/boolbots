@@ -1,7 +1,6 @@
 @import 'global';
 
 .dropWrapperOp {
-  // border-radius: 3px;
   height: 27px;
 }
 
@@ -10,4 +9,11 @@
   margin-right: 0.7vw;
   min-height: 27px;
   width: 60px;
+}
+
+
+.dropOp.is-open {
+  // background-color: $light-orange;
+  -webkit-box-shadow: 5px 5px 18px -4px rgba(48, 35, 14, 0.17);
+  box-shadow: 5px 5px 18px -4px rgba(48, 35, 14, 0.17);
 }

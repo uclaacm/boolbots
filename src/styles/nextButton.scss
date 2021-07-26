@@ -1,9 +1,7 @@
 @import 'global';
 
 .nextButton {
-
   background-color: $main-orange;
-  // background-color: transparent;
   border: 0;
   border-radius: 20px;
   bottom: 20px;
@@ -29,8 +27,4 @@
 .enabled {
   cursor: pointer;
   opacity: 100%;
-}
-
-.enabled:hover {
-  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.26);
 }
