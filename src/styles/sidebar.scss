@@ -15,7 +15,8 @@
 #header {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
+  gap: 1vw;
   margin-bottom: 1.5vw;
   width: inherit;
 }
@@ -24,9 +25,9 @@
   color: white;
   font-size: $title-font-size;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 #logo {
-  width: 65px;
+  width: 40px;
 }
