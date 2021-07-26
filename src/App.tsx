@@ -39,10 +39,10 @@ function App(): JSX.Element {
             <Route path="/python"> <Python onCorrect={() => setEnabled(true)}/> </Route>
             <Route path="/experiment"> <Experiment/> </Route>
           </Switch>
+          <NextButton isEnabled={enabled} onClick={() => setEnabled(false)}/>
+          <Footer/>
         </div>
       </div>
-      <NextButton isEnabled={enabled} onClick={() => setEnabled(false)}/>
-      <Footer/>
     </Router>
   );
 }

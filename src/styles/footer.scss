@@ -4,14 +4,12 @@ h3 {
 }
 
 #footer {
-  align-items: center;
   bottom: 1.3vw;
-  display: flex;
   font-family: 'Westwood Sans','Helvetica Neue', 'Helvetica', sans-serif;
-  justify-content: center;
   left: 50%;
-  margin-top: 0;
   position: absolute;
+  transform: translateX(-50%);
+  width: fit-content;
 }
 
 #tla-logo {
