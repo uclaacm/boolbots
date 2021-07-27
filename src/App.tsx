@@ -17,7 +17,7 @@ import Landing from './components/pages/landing';
 import Output from './components/pages/output';
 import Python from './components/pages/python';
 import Variable from './components/pages/variable';
-
+import Footer from './components/shared/footer';
 import NextButton from './components/shared/nextButton';
 import Sidebar from './components/shared/sidebar';
 
@@ -39,9 +39,10 @@ function App(): JSX.Element {
             <Route path="/python"> <Python onCorrect={() => setEnabled(true)}/> </Route>
             <Route path="/experiment"> <Experiment/> </Route>
           </Switch>
+          <NextButton isEnabled={enabled} onClick={() => setEnabled(false)}/>
+          <Footer/>
         </div>
       </div>
-      <NextButton isEnabled={enabled} onClick={() => setEnabled(false)}/>
     </Router>
   );
 }
