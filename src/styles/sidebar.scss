@@ -29,3 +29,17 @@
 #logo {
   width: 35px;
 }
+
+#description code {
+  background-color: #ffa34d;
+  border-radius: 3px;
+  font-family: $code-font;
+  font-size: 14px;
+  margin: 0 3px;
+  padding: 2px 6px;
+}
+
+#description strong {
+  font-weight: bold;
+  text-decoration: underline;
+}
