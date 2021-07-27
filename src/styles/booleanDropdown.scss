@@ -6,3 +6,8 @@
   margin-left: 0.7vw;
   margin-right: 0.7vw;
 }
+
+.dropWrapperBool .is-open {
+  -webkit-box-shadow: 5px 5px 18px -4px rgba(48, 35, 14, 0.17);
+  box-shadow: 5px 5px 18px -4px rgba(48, 35, 14, 0.17);
+}

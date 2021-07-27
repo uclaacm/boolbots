@@ -45,7 +45,7 @@ function Output(props:OutputProps): JSX.Element {
 
         <h1>Match the output to the robot:</h1>
         <div className="robots">
-          <img src={robot} alt="red robot, circle head, no mouth, 2 antenna, 2 arms, 2 buttons"></img>
+          <img className="robot-image" src={robot} alt="red robot, circle head, no mouth, 2 antenna, 2 arms, 2 buttons"></img>
         </div>
       </div>
     </div>

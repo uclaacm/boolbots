@@ -49,14 +49,13 @@ $light-orange: #ffddb5;
 $main-green: #36b37e;
 $code-background: #322727;
 $main-blue: #00b8d9;
-$hover-color: #adadad;
-$dropdown-open: lightgrey;
+$hover-color: #ffffffec;
 $main-font: 'Darker Grotesque', sans-serif;
 $code-font: 'Roboto Mono', monospace;
 
 $code-font-size: calc(12px + 0.5vw);
 $output-font-size: calc(17px + 0.5vw);
-$sidebar-font-size: 18px;
+$sidebar-font-size: max(18px, calc(12px + 0.5vw));
 $subtitle-font-size: calc(20px + 1.5vw);
 $title-font-size: calc(20px + 1.5vw);
 
@@ -91,7 +90,6 @@ $sidebar-width: 275px;
   font-size: $code-font-size;
   line-height: 1.3em;
   padding: 4vw 3vw;
-  // height: 100%;
 }
 
 #output {
@@ -99,7 +97,6 @@ $sidebar-width: 275px;
   background-color: $main-orange;
   border-radius: $rectangle-corner-radius;
   display: flex;
-  // padding-left: 3vw;
   padding: 4vw 3vw;
 }
 
@@ -145,33 +142,14 @@ h1 {
   border: 0;
   margin: max(10px, 1vw);
   transition: all 0.25s ease;
-  width: fit-content;
-}
-
-@keyframes bounce {
-  0% {
-    padding-bottom: 0;
-    padding-top: 3px;
-  }
-  
-  50% {
-    padding-bottom: 3px;
-    padding-top: 0;
-  }
-  
-  100% {
-    padding-bottom: 0;
-    padding-top: 3px;
-  }
+  width: 180px;
 }
 
 .robot-button:hover {
   cursor: pointer;
   transform: scale(1.05) perspective(1px);
-  // animation: bounce linear infinite 1s;
 }
 
 .robot-image {
   height: 100%;
-  //  width: 100%;
 }
