@@ -63,16 +63,16 @@ function Advanced(props:AdvancedProps): JSX.Element {
         <h1>Select the matching robot:</h1>
         <div className="robots">
           <button className="robot-button">
-            <img src={robot1} alt="red robot, circle head, with mouth, 1 antenna, 2 arms, 1 button"></img>
+            <img className="robot-image" src={robot1} alt="red robot, circle head, with mouth, 1 antenna, 2 arms, 1 button"></img>
           </button>
           <button className="robot-button">
-            <img src={robot2} alt="red robot, square head, with mouth, 1 antenna, 0 arms, 1 button"></img>
+            <img className="robot-image" src={robot2} alt="red robot, square head, with mouth, 1 antenna, 0 arms, 1 button"></img>
           </button>
           <button className="robot-button" onClick={props.onCorrect}>
-            <img src={robot3} alt="blue robot, triangle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
+            <img className="robot-image" src={robot3} alt="blue robot, triangle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
           </button>
           <button className="robot-button">
-            <img src={robot4} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 1 button"></img>
+            <img className="robot-image" src={robot4} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 1 button"></img>
           </button>
         </div>
       </div>

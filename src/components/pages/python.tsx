@@ -21,7 +21,7 @@ function Python(props:PythonProps): JSX.Element {
       { ['True']: Color.Blue },
     ],
     [
-      { ['has_ears']: Color.White },
+      { ['has_mouth']: Color.White },
       { [' = ']: Color.Orange },
       { ['False']: Color.Blue },
     ],
@@ -43,7 +43,7 @@ function Python(props:PythonProps): JSX.Element {
       { ['print']: Color.Orange },
       { ['(']: Color.White },
       { ['not']: Color.Orange },
-      { [' has_ears)']: Color.White },
+      { [' has_mouth)']: Color.White },
     ],
     [
       { ['print']: Color.Orange },
