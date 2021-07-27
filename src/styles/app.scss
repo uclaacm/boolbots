@@ -16,11 +16,15 @@
 
   #contents {
     padding-bottom: 60px;
-    position: relative;
+    // position: relative;
   }
 }
 
 #root {
+  position: relative;
+}
+
+#contents {
   position: relative;
 }
 
