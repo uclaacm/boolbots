@@ -7,7 +7,7 @@ import {Color} from '../shared/constants';
 import Reward, {RewardElement} from "react-rewards";
 import React from "react";
 
-//const rewardRef = React.useRef<RewardElement>(null); //this was a different solution I tried to set ref={rewardRef} but it also didn't work
+const rewardRef = React.useRef<RewardElement>(null); //this was a different solution I tried to set ref={rewardRef} but it also didn't work
 
 interface LandingProps {
   onCorrect: () => void;
@@ -45,7 +45,7 @@ function Landing(props:LandingProps): JSX.Element {
         </div>
         <h1>Select the matching robot:</h1>
         <div className="robots">
-          <Reward ref={(ref) => { this.reward = ref /*this is how the react-rewards github says to do it*/}}>
+          <Reward ref={rewardRef/*this is how the react-rewards github says to do it*/}>
             <button className="robot-button" onClick={punish}>
               <img className="robot-image" src={robot1} alt="green robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
             </button>
