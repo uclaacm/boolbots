@@ -4,6 +4,10 @@ import robot3 from '../../assets/robots/pg1/robot3pg1.svg';
 import robot4 from '../../assets/robots/pg1/robot4pg1.svg';
 import {lineOfCode, CodeFormat}  from  '../shared/codeFormat';
 import {Color} from '../shared/constants';
+import Reward, {RewardElement} from "react-rewards";
+import React from "react";
+
+//const rewardRef = React.useRef<RewardElement>(null); //this was a different solution I tried to set ref={rewardRef} but it also didn't work
 
 interface LandingProps {
   onCorrect: () => void;
@@ -23,6 +27,16 @@ function Landing(props:LandingProps): JSX.Element {
     ],
   ];
 
+  function punish(this: any) { //I added the this: any to try to fix an error, idk if it works correctly
+    this.reward.punishMe();
+  }
+
+  /*function getRef(this: any, ref: any) //I tried to make this to replace whats in the {} after ref=
+  { 
+    this.reward = ref;
+    return this.reward;
+  }*/
+
   return (
     <div className="frame">
       <div id="landing" className='robot-layout'>
@@ -31,9 +45,11 @@ function Landing(props:LandingProps): JSX.Element {
         </div>
         <h1>Select the matching robot:</h1>
         <div className="robots">
-          <button className="robot-button">
-            <img className="robot-image" src={robot1} alt="green robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
-          </button>
+          <Reward ref={(ref) => { this.reward = ref /*this is how the react-rewards github says to do it*/}}>
+            <button className="robot-button" onClick={punish}>
+              <img className="robot-image" src={robot1} alt="green robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
+            </button>
+          </Reward>
           <button className="robot-button">
             <img className="robot-image" src={robot2} alt="red robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
           </button>
