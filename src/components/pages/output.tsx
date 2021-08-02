@@ -39,7 +39,8 @@ function Output(props:OutputProps): JSX.Element {
             <CodeFormat code={code}/>
           </div>
           <div id="output">
-            <CheckedDropdowns onCorrect={props.onCorrect} topCorrect={true} middleCorrect={false} bottomCorrect={false}/>
+            <CheckedDropdowns onCorrect={props.onCorrect}
+              topCorrect={true} middleCorrect={false} bottomCorrect={false}/>
           </div>
         </div>
 
