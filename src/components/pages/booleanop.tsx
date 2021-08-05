@@ -22,7 +22,9 @@ function Boolean(props:BooleanProps): JSX.Element {
     ],
     [
       { ['print']: Color.Orange },
-      { ['(has_ears']: Color.White },
+      { ['(color']: Color.White },
+      { [' == ']: Color.Orange },
+      { ['"red"']: Color.Green },
       { [' or ']: Color.Orange },
       { ['num_of_antennas']: Color.White },
       { [' > ']: Color.Orange },
