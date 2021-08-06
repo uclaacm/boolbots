@@ -17,7 +17,7 @@ function Experiment(): JSX.Element {
     { [' = ']: Color.Orange },
   ]];
   const code3: lineOfCode[] = [[
-    { ['has_ears']: Color.White },
+    { ['has_mouth']: Color.White },
     { [' = ']: Color.Orange },
   ]];
   const code4p1: lineOfCode[] = [[
@@ -52,7 +52,7 @@ function Experiment(): JSX.Element {
     { ['(has_arms ']: Color.White },
   ]];
   const code8p2: lineOfCode[] = [[
-    { [' has_ears)']: Color.White },
+    { [' has_mouth)']: Color.White },
   ]];
 
 
@@ -65,7 +65,7 @@ function Experiment(): JSX.Element {
   const [antennaOp, setAntennaOp] = useState('!=');
   const [antennaCompare, setAntennaCompare] = useState(0);
   const [arms, setArms] = useState(false);
-  const [ears, setEars] = useState(false);
+  const [mouth, setMouth] = useState(false);
   const [boolOp, setBoolOp] = useState('or');
   const [color, setColor] = useState('blue');
   const [colorOp, setColorOp] = useState('==');
@@ -103,14 +103,14 @@ function Experiment(): JSX.Element {
     }
     switch (boolOp) {
       case 'and':
-        newOutput.bottom = arms && ears;
+        newOutput.bottom = arms && mouth;
         break;
       case 'or':
-        newOutput.bottom = arms || ears;
+        newOutput.bottom = arms || mouth;
         break;
     }
     setOutputValues(newOutput);
-  },[antennas,antennaOp,antennaCompare,arms,ears,boolOp,color,colorOp,colorCompare]);
+  },[antennas,antennaOp,antennaCompare,arms,mouth,boolOp,color,colorOp,colorCompare]);
 
   return (
     <div className='frame'>
@@ -129,7 +129,7 @@ function Experiment(): JSX.Element {
               </div>
               <div className='line'>
                 <CodeFormat code={code3}/>
-                <BooleanDropdown onChange={(val) => setEars(val === 'True')} position={'middle'}/>
+                <BooleanDropdown onChange={(val) => setMouth(val === 'True')} position={'middle'}/>
               </div>
               <div className='line'>
                 <CodeFormat code={code4p1}/>

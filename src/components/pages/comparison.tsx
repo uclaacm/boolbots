@@ -57,13 +57,13 @@ function Comparison(props:ComparisonProps): JSX.Element {
           <button className="robot-button">
             <img className="robot-image" src={robot1} alt="blue robot, triangle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
           </button>
-          <button className="robot-button">
+          <button className="robot-button" onClick={props.onCorrect}>
             <img className="robot-image" src={robot2} alt="red robot, circle head, with mouth, 1 antenna, 2 arms, 1 button"></img>
           </button>
           <button className="robot-button">
             <img className="robot-image" src={robot3} alt="red robot, circle head, no mouth, 2 antenna, 2 arms, 2 buttons"></img>
           </button>
-          <button className="robot-button" onClick={props.onCorrect}>
+          <button className="robot-button">
             <img className="robot-image" src={robot4} alt="blue robot, circle head, no mouth, 1 antenna, 0 arms, 2 buttons"></img>
           </button>
         </div>

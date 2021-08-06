@@ -62,7 +62,7 @@ function Python(props:PythonProps): JSX.Element {
             <CodeFormat code={code}/>
           </div>
           <div id='output'>
-            <CheckedDropdowns onCorrect={props.onCorrect} topCorrect={true} middleCorrect={true} bottomCorrect={false}/>
+            <CheckedDropdowns onCorrect={props.onCorrect} topCorrect={true} middleCorrect={true} bottomCorrect={true}/>
           </div>
         </div>
       </div>
