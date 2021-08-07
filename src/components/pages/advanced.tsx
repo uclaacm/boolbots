@@ -1,3 +1,5 @@
+import React from 'react';
+import Reward, {RewardElement} from 'react-rewards';
 import robot1 from '../../assets/robots/pg6/robot1pg6.svg';
 import robot2 from '../../assets/robots/pg6/robot2pg6.svg';
 import robot3 from '../../assets/robots/pg6/robot3pg6.svg';
@@ -43,6 +45,29 @@ function Advanced(props:AdvancedProps): JSX.Element {
     ],
   ];
 
+  const ref1 = React.useRef<RewardElement>(null);
+  const ref2 = React.useRef<RewardElement>(null);
+  const ref3 = React.useRef<RewardElement>(null);
+  const ref4 = React.useRef<RewardElement>(null);
+
+  function robots(i: number) {
+    switch(i) {
+      case 1:
+        ref1.current?.punishMe();
+        break;
+      case 2:
+        ref2.current?.punishMe();
+        break;
+      case 3:
+        ref3.current?.rewardMe();
+        props.onCorrect();
+        break;
+      default:
+        ref4.current?.punishMe();
+        break;
+    }
+  }
+
   return (
     <div className="frame">
       <div id="advanced" className='robot-layout'>
@@ -62,18 +87,26 @@ function Advanced(props:AdvancedProps): JSX.Element {
 
         <h1>Select the matching robot:</h1>
         <div className="robots">
-          <button className="robot-button">
-            <img className="robot-image" src={robot1} alt="red robot, circle head, with mouth, 1 antenna, 2 arms, 1 button"></img>
-          </button>
-          <button className="robot-button">
-            <img className="robot-image" src={robot2} alt="red robot, square head, with mouth, 1 antenna, 0 arms, 1 button"></img>
-          </button>
-          <button className="robot-button" onClick={props.onCorrect}>
-            <img className="robot-image" src={robot3} alt="blue robot, triangle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
-          </button>
-          <button className="robot-button">
-            <img className="robot-image" src={robot4} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 1 button"></img>
-          </button>
+          <Reward ref={ref1} type='confetti'>
+            <button className="robot-button" onClick={() => robots(1)}>
+              <img className="robot-image" src={robot1} alt="red robot, circle head, with mouth, 1 antenna, 2 arms, 1 button"></img>
+            </button>
+          </Reward>
+          <Reward ref={ref2} type='confetti'>
+            <button className="robot-button" onClick={() => robots(2)}>
+              <img className="robot-image" src={robot2} alt="red robot, square head, with mouth, 1 antenna, 0 arms, 1 button"></img>
+            </button>
+          </Reward>
+          <Reward ref={ref3} type='confetti'>
+            <button className="robot-button" onClick={() => robots(3)}>
+              <img className="robot-image" src={robot3} alt="blue robot, triangle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
+            </button>
+          </Reward>
+          <Reward ref={ref4} type='confetti'>
+            <button className="robot-button" onClick={() => robots(4)}>
+              <img className="robot-image" src={robot4} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 1 button"></img>
+            </button>
+          </Reward>
         </div>
       </div>
     </div>
