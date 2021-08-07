@@ -37,26 +37,32 @@ function Equal(props:EqualProps): JSX.Element {
     ],
   ];
 
-  const ref1 = React.useRef<RewardElement>(null);
-  const ref2 = React.useRef<RewardElement>(null);
-  const ref3 = React.useRef<RewardElement>(null);
-  const ref4 = React.useRef<RewardElement>(null);
+  const refList = [React.useRef<RewardElement>(null), React.useRef<RewardElement>(null),
+    React.useRef<RewardElement>(null), React.useRef<RewardElement>(null)];
+  const robotImages = [robot1, robot2, robot3, robot4];
 
-  function robots(i: number) {
-    switch(i) {
-      case 1:
-        ref1.current?.punishMe();
-        break;
-      case 2:
-        ref2.current?.punishMe();
-        break;
+  function robots(index: number) {
+    switch(index) {
       case 3:
-        ref3.current?.punishMe();
-        break;
-      default:
-        ref4.current?.rewardMe();
+        refList[index].current?.rewardMe();
         props.onCorrect();
         break;
+      default:
+        refList[index].current?.punishMe();
+        break;
+    }
+  }
+
+  function getAltText(index: number) {
+    switch(index) {
+      case 0:
+        return 'blue robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons';
+      case 1:
+        return 'red robot, circle head, with mouth, 1 antenna, 2 arms, 3 buttons';
+      case 2:
+        return 'green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons';
+      default:
+        return 'green robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons';
     }
   }
 
@@ -84,26 +90,13 @@ function Equal(props:EqualProps): JSX.Element {
 
         <h1>Select the matching robot:</h1>
         <div className="robots">
-          <Reward ref={ref1} type='confetti'>
-            <button className="robot-button" onClick={() => robots(1)}>
-              <img className="robot-image" src={robot1} alt="blue robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
-            </button>
-          </Reward>
-          <Reward ref={ref2} type='confetti'>
-            <button className="robot-button" onClick={() => robots(2)}>
-              <img className="robot-image" src={robot2} alt="red robot, circle head, with mouth, 1 antenna, 2 arms, 3 buttons"></img>
-            </button>
-          </Reward>
-          <Reward ref={ref3} type='confetti'>
-            <button className="robot-button" onClick={() => robots(3)}>
-              <img className="robot-image" src={robot3} alt="green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
-            </button>
-          </Reward>
-          <Reward ref={ref4} type='confetti'>
-            <button className="robot-button" onClick={() => robots(4)}>
-              <img className="robot-image" src={robot4} alt="green robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons"></img>
-            </button>
-          </Reward>
+          {robotImages.map((robot, index) => (
+            <Reward key='robot${index}' ref={refList[index]} type="confetti" config={{angle: 70, lifetime: 125}}>
+              <button className="robot-button" onClick={() => robots(index)}>
+                <img className="robot-image" src={robot} alt={getAltText(index)}></img>
+              </button>
+            </Reward>
+          ))}
         </div>
       </div>
     </div>
