@@ -32,6 +32,10 @@ function Variable(props:VariableProps): JSX.Element {
   const refList = [React.useRef<RewardElement>(null), React.useRef<RewardElement>(null),
     React.useRef<RewardElement>(null), React.useRef<RewardElement>(null)];
   const robotImages = [robot1, robot2, robot3, robot4];
+  const altTexts = ['blue robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons',
+    'green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons',
+    'blue robot, circle head, no mouth, 1 antenna, 2 arms, 3 buttons',
+    'blue robot, circle head, with mouth, 0 antenna, 2 arms, 3 buttons'];
 
   function robots(index: number) {
     switch(index) {
@@ -45,19 +49,6 @@ function Variable(props:VariableProps): JSX.Element {
     }
   }
 
-  function getAltText(index: number) {
-    switch(index) {
-      case 0:
-        return 'blue robot, circle head, no mouth, 0 antenna, 2 arms, 3 buttons';
-      case 1:
-        return 'green robot, circle head, with mouth, 2 antenna, 2 arms, 3 buttons';
-      case 2:
-        return 'blue robot, circle head, no mouth, 1 antenna, 2 arms, 3 buttons';
-      default:
-        return 'blue robot, circle head, with mouth, 0 antenna, 2 arms, 3 buttons';
-    }
-  }
-
   return (
     <div className="frame">
       <div id="variable" className='robot-layout'>
@@ -67,11 +58,13 @@ function Variable(props:VariableProps): JSX.Element {
         <h1>Select the matching robot:</h1>
         <div className="robots">
           {robotImages.map((robot, index) => (
-            <Reward key='robot${index}' ref={refList[index]} type="confetti" config={{angle: 70, lifetime: 125}}>
-              <button className="robot-button" onClick={() => robots(index)}>
-                <img className="robot-image" src={robot} alt={getAltText(index)}></img>
-              </button>
-            </Reward>
+            <div key='robot${index}'>
+              <Reward ref={refList[index]} type="confetti" config={{angle: 70, lifetime: 125}}>
+                <button className="robot-button" onClick={() => robots(index)}>
+                  <img className="robot-image" src={robot} alt={altTexts[index]}></img>
+                </button>
+              </Reward>
+            </div>
           ))}
         </div>
       </div>
