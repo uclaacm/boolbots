@@ -1,3 +1,5 @@
+import React from 'react';
+import Reward, {RewardElement} from 'react-rewards';
 import robot1 from '../../assets/robots/pg4/robot1pg4.svg';
 import robot2 from '../../assets/robots/pg4/robot2pg4.svg';
 import robot3 from '../../assets/robots/pg4/robot3pg4.svg';
@@ -35,6 +37,26 @@ function Comparison(props:ComparisonProps): JSX.Element {
     ],
   ];
 
+  const refList = [React.useRef<RewardElement>(null), React.useRef<RewardElement>(null),
+    React.useRef<RewardElement>(null), React.useRef<RewardElement>(null)];
+  const robotImages = [robot1, robot2, robot3, robot4];
+  const altTexts = ['blue robot, triangle head, with mouth, 2 antenna, 2 arms, 3 buttons',
+    'red robot, circle head, with mouth, 1 antenna, 2 arms, 1 button',
+    'red robot, circle head, no mouth, 2 antenna, 2 arms, 2 buttons',
+    'blue robot, circle head, no mouth, 1 antenna, 0 arms, 2 buttons'];
+
+  function robots(index: number) {
+    switch(index) {
+      case 1:
+        refList[index].current?.rewardMe();
+        props.onCorrect();
+        break;
+      default:
+        refList[index].current?.punishMe();
+        break;
+    }
+  }
+
   return (
     <div className="frame">
       <div id="comparison" className='robot-layout'>
@@ -54,18 +76,15 @@ function Comparison(props:ComparisonProps): JSX.Element {
 
         <h1>Select the matching robot:</h1>
         <div className="robots">
-          <button className="robot-button">
-            <img className="robot-image" src={robot1} alt="blue robot, triangle head, with mouth, 2 antenna, 2 arms, 3 buttons"></img>
-          </button>
-          <button className="robot-button" onClick={props.onCorrect}>
-            <img className="robot-image" src={robot2} alt="red robot, circle head, with mouth, 1 antenna, 2 arms, 1 button"></img>
-          </button>
-          <button className="robot-button">
-            <img className="robot-image" src={robot3} alt="red robot, circle head, no mouth, 2 antenna, 2 arms, 2 buttons"></img>
-          </button>
-          <button className="robot-button">
-            <img className="robot-image" src={robot4} alt="blue robot, circle head, no mouth, 1 antenna, 0 arms, 2 buttons"></img>
-          </button>
+          {robotImages.map((robot, index) => (
+            <div key='robot${index}'>
+              <Reward ref={refList[index]} type="confetti" config={{angle: 70, lifetime: 125}}>
+                <button className="robot-button" onClick={() => robots(index)}>
+                  <img className="robot-image" src={robot} alt={altTexts[index]}></img>
+                </button>
+              </Reward>
+            </div>
+          ))}
         </div>
       </div>
     </div>
