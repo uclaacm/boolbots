@@ -51,7 +51,7 @@ Take a look at `https://boolbots.netlify.app/asset-manifest.json`. [Like this!](
 
 ## Overview
 
-... explain what your project is here! What technology you used, who made it, and what it was for!
+BoolBots is a learning lab from ACM Teach LA made with the intent to help students in the "Intro to Programming with Python" curriculum learn about booleans. We help students understand what a boolean is and how various operators work by having them evaluate expressions and matching them with the robot that corresponds to these statements. This project was deployed with Netlify and uses react-router, react-dropdown, react-markdown, react-rewards, and use-sound. Developed by [@zhangallison](https://github.com/zhangallison), [@alvinh36](https://github.com/alvinh36), [@archishadatta](https://github.com/archishadatta), [@connord28](https://github.com/connord28), [@ldalton02](https://github.com/ldalton02), and [@nendow02](https://github.com/nendow02).
 
 ## Development Setup
 
