@@ -47,7 +47,7 @@ declare module '*.<YOUR_ASSET_TYPE>' {
 ```
       
 ### How can I tell if my asset is actually being served?
-Take a look at `<YOUR_PROJECT_PATH>/asset-manifest.json`. [Like this!](https://teach-la-ts-react-starter.netlify.app/asset-manifest.json)
+Take a look at `https://boolbots.netlify.app/asset-manifest.json`. [Like this!](https://boolbots.netlify.app/asset-manifest.json)
 
 ## Overview
 
