@@ -127,7 +127,7 @@ h1 {
   display: grid;
   gap: 10px;
   height: 100%;
-  padding: max(30px, 3vw);
+  padding: max(30px, 5vw);
   width: 100%;
 }
 
@@ -146,7 +146,7 @@ h1 {
   border: 0;
   height: 100%;
   margin: max(10px, 1vw);
-  padding-bottom: min(4vw, 100px);
+  padding-bottom: min(2vw, 100px);
   transition: all 0.25s ease;
   width: 180px;
 }
