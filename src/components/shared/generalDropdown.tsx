@@ -7,6 +7,7 @@ interface GeneralDropdownProps {
   options: string[];
   position: string;
   className?: string;
+  default?: string;
 }
 
 export function GeneralDropdown(props:GeneralDropdownProps):JSX.Element  {
@@ -22,7 +23,7 @@ export function GeneralDropdown(props:GeneralDropdownProps):JSX.Element  {
     <Dropdown
       className={`drop ${props.className ?? ''} ${props.position}`}
       options={options}
-      value={props.options[props.options.length-1]}
+      value={props.default ?? props.options[props.options.length-1]}
       arrowClosed={<div className='arrow'/>}
       arrowOpen={<div className='arrow flipped'/>}
       onChange={(option) => props.onChange(option.value)}/>

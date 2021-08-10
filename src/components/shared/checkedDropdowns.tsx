@@ -12,9 +12,9 @@ interface CheckedDropdownsProps {
 export function CheckedDropdowns(props:CheckedDropdownsProps):JSX.Element  {
 
   const [dropValues, setDropValues] = useState({
-    top: false,
-    middle: false,
-    bottom: false,
+    top: !props.topCorrect,
+    middle: !props.middleCorrect,
+    bottom: !props.bottomCorrect,
   });
 
   const selected = (value:string, pos:string) => {
