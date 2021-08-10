@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Westwood Sans';
-  src: local('Westwood Sans'), 
+  src: local('Westwood Sans'),
     url('../assets/WestwoodSans-Regular.ttf') format('truetype');
 }
 
@@ -119,7 +119,7 @@ h1 {
 .frame {
   align-items: center;
   display: flex;
-  height: 100%;  
+  height: 100%;
 }
 
 .robot-layout {
@@ -137,10 +137,16 @@ h1 {
   justify-content: space-evenly;
 }
 
+.robot-container {
+  display: flex;
+}
+
 .robot-button {
   background: none;
   border: 0;
+  height: 100%;
   margin: max(10px, 1vw);
+  padding-bottom: min(2vw, 100px);
   transition: all 0.25s ease;
   width: 180px;
 }

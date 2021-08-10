@@ -55,7 +55,7 @@ function Landing(props:LandingProps): JSX.Element {
         <h1>Select the matching robot:</h1>
         <div className="robots">
           {robotImages.map((robot, index) => (
-            <div key='robot${index}'>
+            <div key='robot${index}' className="robot-container">
               <Reward ref={refList[index]} type="confetti" config={{angle: 70, lifetime: 125}}>
                 <button className="robot-button" onClick={() => robots(index)}>
                   <img className="robot-image" src={robot} alt={altTexts[index]}></img>
