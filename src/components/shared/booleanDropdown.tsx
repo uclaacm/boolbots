@@ -12,7 +12,8 @@ export function BooleanDropdown(props:BooleanDropdownProps):JSX.Element  {
       <GeneralDropdown
         options={['True','False']}
         onChange={(option) => props.onChange(option)}
-        position={props.position}/>
+        position={props.position}
+        default={' '}/>
     </div>
   );}
 
