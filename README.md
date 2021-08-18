@@ -5,50 +5,6 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4932fc43-c02a-4724-bfc0-0253ac602219/deploy-status)](https://app.netlify.com/sites/boolbots/deploys)
 
-## FAQs
-
-### Husky is yelling at me and not letting me commit :(
-
-Add the `-n` flag to your commit message to skip Husky's auto-linting.
-
-EG: `git commit -m "changes" -n`
-
-### Assets are angry and won't accept <x filetype>
-Our webpack set-up currently accepts asset files with the following extensions: `png, svg, jpg/jpeg, gif, mp3, ttf`
-
-Code for it can be seen in line 22 `webpack.dev.js` and in `webpack.prod.js`
-
-```
-      {
-        test: /\.(png|svg|jpe?g|gif|mp3|ttf)$/i, // we use regex to test different file types
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: 'assets/[name].[ext]',
-          },
-        },
-      },
-```
-
-If you want to add more assets like `.pdf`, `.wav`, `.mp4`, <YOUR_ASSET_TYPE> etc.
-
-- [ ] Update `webpack.dev.js` file. Change `test: /\.(png|svg|jpe?g|gif|mp3)$/i` to `test: /\.(png|svg|jpe?g|gif|mp3|<YOUR_ASSET_TYPE>)$/i`
-- [ ] Update `webpack.prod.js` file. Change `test: /\.(png|svg|jpe?g|gif|mp3)$/i,` to `test: /\.(png|svg|jpe?g|gif|mp3|<YOUR_ASSET_TYPE>)$/i`
-- [ ] (If typing is needed) add a folder under `custom_typing` => `import-<YOUR_ASSET_TYPE>`
-- [ ] (If typing is needed) create a file like `import-<YOUR_ASSET_TYPE>.d.ts`
-- [ ] (If typing is needed) add in:
-
-```
-/* eslint-disable @typescript-eslint/no-explicit-any */
-declare module '*.<YOUR_ASSET_TYPE>' {
-  const value: <YOUR_ASSET_TYPE-TYPE>;
-  export default value;
-}
-```
-      
-### How can I tell if my asset is actually being served?
-Take a look at `https://boolbots.netlify.app/asset-manifest.json`. [Like this!](https://boolbots.netlify.app/asset-manifest.json)
-
 ## Overview
 
 BoolBots is a learning lab from ACM Teach LA made with the intent to help students in the "Intro to Programming with Python" curriculum learn about booleans. We help students understand what a boolean is and how various operators work by having them evaluate expressions and matching them with the robot that corresponds to these statements. This project was deployed with Netlify and uses react-router, react-dropdown, react-markdown, react-rewards, and use-sound. Developed by [@zhangallison](https://github.com/zhangallison), [@alvinh36](https://github.com/alvinh36), [@archishadatta](https://github.com/archishadatta), [@connord28](https://github.com/connord28), [@ldalton02](https://github.com/ldalton02), and [@nendow02](https://github.com/nendow02).
