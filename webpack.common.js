@@ -41,7 +41,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: './public/favicon.svg',
-      favicon: './public/favicon512.png',
       filename: './index.html',
     }),
     // TODO: Update configurable info for ManifestPlugin
