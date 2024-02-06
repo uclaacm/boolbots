@@ -23,14 +23,16 @@ function LevelSelect(props:LevelSelectProps): JSX.Element | null {
 
   const history = useHistory();
 
-  const createDropDownItems = ():Option[] => {
-    return pageOptions.slice(0, highestPage + 1).map((item, itemIndex) => {
-      return  ({
+  const createDropDownItems = (): Option[] => {
+    const completedPages = pageOptions.slice(0, pageOptions.indexOf(currentPage) + 1);
+    return completedPages.map((item, itemIndex) => {
+      return {
         label: <div>{itemIndex + 1}</div>,
         value: item,
-      });
+      };
     });
   };
+  
 
   const onLevelChange = (newIndex:number) => {
     setReloadTime(Date.now());
@@ -39,16 +41,19 @@ function LevelSelect(props:LevelSelectProps): JSX.Element | null {
 
   useEffect(() => {
     const num = Number(localStorage.getItem('highestPage'));
-    setHighestPage(num || -1);
-  }, []);
+    setHighestPage(num || pageOptions.indexOf(currentPage) +1 );
+  }, [currentPage, pageOptions]);
 
   useEffect(() => {
-    if (isCompleted && pageOptions.indexOf(currentPage) >= highestPage) {
-      setHighestPage(pageOptions.indexOf(currentPage) + 1);
-      localStorage.setItem('highestPage', highestPage.toString());
+    if (isCompleted && pageOptions.indexOf(currentPage) + 1 > highestPage) {
+      const newHighestPage = pageOptions.indexOf(currentPage) + 1;
+      console.log('Setting new highestPage:', newHighestPage);
+      localStorage.setItem('highestPage', newHighestPage.toString());
+      setHighestPage(newHighestPage);
     }
     setIndex(pageOptions.indexOf(currentPage));
-  }, [isCompleted]);
+  }, [isCompleted, currentPage, pageOptions]);
+  
 
   useEffect(() => {
     if (index === highestPage) {
@@ -70,11 +75,13 @@ function LevelSelect(props:LevelSelectProps): JSX.Element | null {
       <div className="dropdown-container">
         {pageOptions.indexOf(currentPage) > 0 && <BsCaretLeftFill onClick={() => setIndex(index - 1)} className="select-arrow left-arrow" size={20} />}
         <Dropdown
-          options={createDropDownItems()}
+          options={createDropDownItems()}  // Ensure you are using the correct version
           baseClassName="dropdown"
           onChange={(option) => onLevelChange(pageOptions.indexOf(option.value))}
-          value={{label: <span key={reloadTime} >Level {pageOptions.indexOf(currentPage) + 1} of 9</span>,
-            value: pageOptions[index]}}
+          value={{
+              label: <span key={reloadTime}>Level {pageOptions.indexOf(currentPage) + 1} of 9</span>,
+              value: pageOptions[index],
+          }}
           arrowClosed={<BsFillCaretUpFill size={10} />}
           arrowOpen={<BsFillCaretDownFill size={10} />}
         />
